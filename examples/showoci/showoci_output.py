@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.05.24"
+    version = "24.06.11"
 
     ##########################################################################
     # spaces for align
@@ -735,10 +735,16 @@ class ShowOCIOutput(object):
                 for index, arr in enumerate(drg['ip_sec_connections'], start=1):
                     drg_route_table = ", DRG Route: " + arr['drg_route_table'] if arr['drg_route_table'] else ""
                     print(self.tabs + "      IPSEC " + str(index) + "   : " + arr['name'] + " (" + arr['tunnels_status'] + ")" + drg_route_table)
+                    if 'logs' in arr:
+                        for log in arr['logs']:
+                            print(self.tabs + self.tabs + "Log : " + log['name'] + " - " + log['source_service'])
 
                 for index, arr in enumerate(drg['virtual_circuits'], start=1):
                     drg_route_table = ", DRG Route: " + arr['drg_route_table'] if arr['drg_route_table'] else ""
                     print(self.tabs + "      VC " + str(index) + "      : " + arr['name'] + " (" + arr['bgp_session_state'] + ")" + drg_route_table)
+                    if 'logs' in arr:
+                        for log in arr['logs']:
+                            print(self.tabs + self.tabs + "Log : " + log['name'] + " - " + log['source_service'])
 
                 for index, arr in enumerate(drg['remote_peerings'], start=1):
                     drg_route_table = ", DRG Route: " + arr['drg_route_table'] if arr['drg_route_table'] else ""
@@ -1904,7 +1910,7 @@ class ShowOCIOutput(object):
                 print("")
 
             if 'db_system' in list_databases:
-                self.print_header("Databases DB Systems", 2)
+                self.print_header("Databases DB Base", 2)
                 self.__print_database_db_system(list_databases['db_system'])
                 print("")
 
@@ -5542,7 +5548,42 @@ class ShowOCICSV(object):
 
             for sl in sec_lists:
                 if len(sl['sec_rules']) == 0:
-                    data = {'region_name': region_name,
+                    data = {
+                        'region_name': region_name,
+                        'vcn_name': vcn['display_name'],
+                        'vcn_cidr': "",
+                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
+                        'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_path': vcn['compartment_path'],
+                        'sec_name': sl['name'],
+                        'sec_compartment': sl['compartment_name'],
+                        'sec_compartment_path': sl['compartment_path'],
+                        'sec_rules': "Empty",
+                        'direction': "",
+                        'is_stateless': "",
+                        'source': "",
+                        'destination': "",
+                        'protocol': "",
+                        'sec_protocol': "",
+                        'src_port_min': "",
+                        'src_port_max': "",
+                        'dst_port_min': "",
+                        'dst_port_max': "",
+                        'icmp_code': "",
+                        'icmp_type': "",
+                        'description': "",
+                        'security_alert': "FALSE",
+                        'time_created': sl['time_created'][0:16],
+                        'vcn_id': vcn['id'],
+                        'sec_id': sl['id'],
+                        'id': sl['id'] + ":" + str(hash("Empty"))
+                    }
+                    self.csv_network_security_list.append(data)
+
+                else:
+                    for slr in sl['sec_rules']:
+                        data = {
+                            'region_name': region_name,
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': "",
                             'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
@@ -5551,37 +5592,26 @@ class ShowOCICSV(object):
                             'sec_name': sl['name'],
                             'sec_compartment': sl['compartment_name'],
                             'sec_compartment_path': sl['compartment_path'],
-                            'sec_protocol': "",
-                            'is_stateless': "",
-                            'description': "",
-                            'sec_rules': "Empty",
-                            'time_created': sl['time_created'][0:16],
+                            'sec_rules': slr['desc'],
+                            'direction': slr['direction'],
+                            'is_stateless': slr['is_stateless'],
+                            'source': slr['source'],
+                            'destination': slr['destination'],
+                            'protocol': slr['protocol'],
+                            'sec_protocol': slr['protocol_name'],
+                            'src_port_min': slr['src_port_min'],
+                            'src_port_max': slr['src_port_max'],
+                            'dst_port_min': slr['dst_port_min'],
+                            'dst_port_max': slr['dst_port_max'],
+                            'icmp_code': slr['icmp_code'],
+                            'icmp_type': slr['icmp_type'],
+                            'security_alert': slr['security_alert'],
+                            'description': slr['description'],
+                            'time_created': sl['time_created'],
                             'vcn_id': vcn['id'],
                             'sec_id': sl['id'],
-                            'id': sl['id'] + ":" + str(hash("Empty"))
-                            }
-                    self.csv_network_security_list.append(data)
-
-                else:
-                    for slr in sl['sec_rules']:
-                        data = {'region_name': region_name,
-                                'vcn_name': vcn['display_name'],
-                                'vcn_cidr': "",
-                                'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
-                                'vcn_compartment': vcn['compartment_name'],
-                                'vcn_compartment_path': vcn['compartment_path'],
-                                'sec_name': sl['name'],
-                                'sec_compartment': sl['compartment_name'],
-                                'sec_compartment_path': sl['compartment_path'],
-                                'sec_protocol': slr['protocol_name'],
-                                'is_stateless': slr['is_stateless'],
-                                'description': slr['description'],
-                                'sec_rules': slr['desc'],
-                                'time_created': sl['time_created'],
-                                'vcn_id': vcn['id'],
-                                'sec_id': sl['id'],
-                                'id': sl['id'] + ":" + str(hash(slr['desc']))
-                                }
+                            'id': sl['id'] + ":" + str(hash(slr['desc']))
+                        }
                         # check if id is in the list already
                         item_exists = False
                         for ls in self.csv_network_security_list:
@@ -5651,6 +5681,7 @@ class ShowOCICSV(object):
                         'cpe_local_identifier': arr['cpe_local_identifier'],
                         'cpe_time_created': arr['time_created'][0:16],
                         'routes': str(', '.join(x for x in arr['routes'])),
+                        'logs': str(', '.join(x['name'] for x in arr['logs'])),
                         'drg_id': arr['drg_id'],
                         'cpe_id': arr['cpe_id'],
                         'ipsec_id': arr['id'],
@@ -5702,6 +5733,7 @@ class ShowOCICSV(object):
                     'cross_connect_mappings': arr['cross_connect_mappings'],
                     'type': arr['type'],
                     'drg_route_table': arr['drg_route_table'],
+                    'logs': str(', '.join(x['name'] for x in arr['logs'])),
                     'drg_id': arr['drg_id'],
                     'drg_route_table_id': arr['drg_route_table_id'],
                     'time_created': arr['time_created'],
@@ -5785,7 +5817,49 @@ class ShowOCICSV(object):
 
             for sl in nsg:
                 if len(sl['sec_rules']) == 0:
-                    data = {'region_name': region_name,
+                    data = {
+                        'region_name': region_name,
+                        'vcn_name': vcn['display_name'],
+                        'vcn_cidr': "",
+                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
+                        'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_path': vcn['compartment_path'],
+                        'sec_name': sl['name'],
+                        'sec_compartment': sl['compartment_name'],
+                        'sec_compartment_path': sl['compartment_path'],
+                        'rule_id': '',
+                        'sec_rules': "Empty",
+                        'direction': '',
+                        'is_stateless': '',
+                        'is_valid': '',
+                        'source': '',
+                        'source_name': '',
+                        'source_type': '',
+                        'destination': '',
+                        'destination_name': '',
+                        'destination_type': '',
+                        'protocol': '',
+                        'sec_protocol': '',
+                        'src_port_min': '',
+                        'src_port_max': '',
+                        'dst_port_min': '',
+                        'dst_port_max': '',
+                        'icmp_code': '',
+                        'icmp_type': '',
+                        'sec_time_created': '',
+                        'security_alert': "FALSE",
+                        'description': '',
+                        'time_created': sl['time_created'],
+                        'vcn_id': vcn['id'],
+                        'sec_id': sl['id'],
+                        'id': sl['id'] + ":Empty"
+                    }
+                    self.csv_network_security_group.append(data)
+
+                else:
+                    for slr in sl['sec_rules']:
+                        data = {
+                            'region_name': region_name,
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': "",
                             'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
@@ -5794,37 +5868,33 @@ class ShowOCICSV(object):
                             'sec_name': sl['name'],
                             'sec_compartment': sl['compartment_name'],
                             'sec_compartment_path': sl['compartment_path'],
-                            'sec_protocol': "",
-                            'is_stateless': "",
-                            'description': "",
-                            'sec_rules': "Empty",
+                            'rule_id': slr['id'],
+                            'sec_rules': slr['desc'],
+                            'direction': slr['direction'],
+                            'protocol': slr['protocol'],
+                            'sec_protocol': slr['protocol_name'],
+                            'is_stateless': slr['is_stateless'],
+                            'is_valid': slr['is_valid'],
+                            'source': slr['source'],
+                            'source_name': slr['source_name'],
+                            'source_type': slr['source_type'],
+                            'destination': slr['destination'],
+                            'destination_name': slr['destination_name'],
+                            'destination_type': slr['destination_type'],
+                            'src_port_min': slr['src_port_min'],
+                            'src_port_max': slr['src_port_max'],
+                            'dst_port_min': slr['dst_port_min'],
+                            'dst_port_max': slr['dst_port_max'],
+                            'icmp_code': slr['icmp_code'],
+                            'icmp_type': slr['icmp_type'],
+                            'description': slr['description'],
+                            'security_alert': slr['security_alert'],
+                            'sec_time_created': slr['time_created'],
                             'time_created': sl['time_created'],
                             'vcn_id': vcn['id'],
                             'sec_id': sl['id'],
-                            'id': sl['id'] + ":Empty"
-                            }
-                    self.csv_network_security_group.append(data)
-
-                else:
-                    for slr in sl['sec_rules']:
-                        data = {'region_name': region_name,
-                                'vcn_name': vcn['display_name'],
-                                'vcn_cidr': "",
-                                'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
-                                'vcn_compartment': vcn['compartment_name'],
-                                'vcn_compartment_path': vcn['compartment_path'],
-                                'sec_name': sl['name'],
-                                'sec_compartment': sl['compartment_name'],
-                                'sec_compartment_path': sl['compartment_path'],
-                                'sec_protocol': slr['protocol_name'],
-                                'is_stateless': slr['is_stateless'],
-                                'description': slr['description'],
-                                'sec_rules': slr['desc'],
-                                'time_created': sl['time_created'],
-                                'vcn_id': vcn['id'],
-                                'sec_id': sl['id'],
-                                'id': sl['id'] + ":" + slr['id']
-                                }
+                            'id': sl['id'] + ":" + slr['id']
+                        }
 
                         # check if id is in the list already
                         item_exists = False
@@ -6103,7 +6173,11 @@ class ShowOCICSV(object):
                         'database_edition': dbs['database_edition_short'],
                         'license_model': dbs['license_model'],
                         'data_subnet': dbs['data_subnet'],
+                        'data_subnet_name': dbs['data_subnet_name'],
+                        'data_vcn_name': dbs['data_vcn_name'],
                         'backup_subnet': dbs['backup_subnet'],
+                        'backup_subnet_name': dbs['backup_subnet_name'],
+                        'backup_vcn_name': dbs['backup_vcn_name'],
                         'scan_ips': str(', '.join(x for x in dbs['scan_ips'])),
                         'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
                         'cluster_name': dbs['cluster_name'],
@@ -6166,7 +6240,11 @@ class ShowOCICSV(object):
                             'database_edition': dbs['database_edition_short'],
                             'license_model': dbs['license_model'],
                             'data_subnet': dbs['data_subnet'],
+                            'data_subnet_name': dbs['data_subnet_name'],
+                            'data_vcn_name': dbs['data_vcn_name'],
                             'backup_subnet': dbs['backup_subnet'],
+                            'backup_subnet_name': dbs['backup_subnet_name'],
+                            'backup_vcn_name': dbs['backup_vcn_name'],
                             'scan_ips': str(', '.join(x for x in dbs['scan_ips'])),
                             'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
                             'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
@@ -6331,7 +6409,11 @@ class ShowOCICSV(object):
                             'database_edition': 'XP',
                             'license_model': vm['license_model'],
                             'data_subnet': vm['data_subnet'],
+                            'data_subnet_name': vm['data_subnet_name'],
+                            'data_vcn_name': vm['data_vcn_name'],
                             'backup_subnet': vm['backup_subnet'],
+                            'backup_subnet_name': vm['backup_subnet_name'],
+                            'backup_vcn_name': vm['backup_vcn_name'],
                             'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
                             'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
                             'cluster_name': vm['cluster_name'],
@@ -6380,7 +6462,11 @@ class ShowOCICSV(object):
                                     'database_edition': 'XP',
                                     'license_model': vm['license_model'],
                                     'data_subnet': vm['data_subnet'],
+                                    'data_subnet_name': vm['data_subnet_name'],
+                                    'data_vcn_name': vm['data_vcn_name'],
                                     'backup_subnet': vm['backup_subnet'],
+                                    'backup_subnet_name': vm['backup_subnet_name'],
+                                    'backup_vcn_name': vm['backup_vcn_name'],
                                     'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
                                     'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
                                     'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
@@ -6513,7 +6599,11 @@ class ShowOCICSV(object):
                             'database_edition': 'XP',
                             'license_model': vm['license_model'],
                             'data_subnet': "",
+                            'data_subnet_name': "",
+                            'data_vcn_name': "",
                             'backup_subnet': "",
+                            'backup_subnet_name': "",
+                            'backup_vcn_name': "",
                             'scan_ips': "",
                             'vip_ips': "",
                             'cluster_name': vm['display_name'],
@@ -6564,7 +6654,11 @@ class ShowOCICSV(object):
                                     'database_edition': 'XP',
                                     'license_model': vm['license_model'],
                                     'data_subnet': "",
+                                    'data_subnet_name': "",
+                                    'data_vcn_name': "",
                                     'backup_subnet': "",
+                                    'backup_subnet_name': "",
+                                    'backup_vcn_name': "",
                                     'scan_ips': "",
                                     'vip_ips': "",
                                     'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
@@ -6703,7 +6797,11 @@ class ShowOCICSV(object):
                         'database_edition': 'ADB',
                         'license_model': dbs['license_model'],
                         'data_subnet': "",
+                        'data_subnet_name': "",
+                        'data_vcn_name': "",
                         'backup_subnet': "",
+                        'backup_subnet_name': "",
+                        'backup_vcn_name': "",
                         'scan_ips': "",
                         'vip_ips': "",
                         'pdbs': "",
@@ -6830,8 +6928,12 @@ class ShowOCICSV(object):
                                     'database': db['name'],
                                     'database_edition': 'ADB-D',
                                     'license_model': vm['license_model'],
-                                    'data_subnet': vm['subnet_name'],
+                                    'data_subnet': vm['subnet_name_full'],
+                                    'data_subnet_name': vm['subnet_name'],
+                                    'data_vcn_name': vm['vcn_name'],
                                     'backup_subnet': "",
+                                    'backup_subnet_name': "",
+                                    'backup_vcn_name': "",
                                     'scan_ips': "",
                                     'vip_ips': "",
                                     'pdbs': "",
@@ -6886,10 +6988,10 @@ class ShowOCICSV(object):
                                     'data_safe_status': db['data_safe_status'],
                                     'time_maintenance_begin': db['time_maintenance_begin'],
                                     'time_maintenance_end': db['time_maintenance_end'],
-                                    'subnet_id': vm['subnet_id'] if vm['subnet_id'] != "None" else "",
-                                    'subnet_name': vm['subnet_name'] if vm['subnet_name'] != "None" else "",
-                                    'private_endpoint': db['private_endpoint'] if db['private_endpoint'] != "None" else "",
-                                    'private_endpoint_label': db['private_endpoint_label'] if db['private_endpoint_label'] != "None" else "",
+                                    'subnet_id': vm['subnet_id'],
+                                    'subnet_name': vm['subnet_name'],
+                                    'private_endpoint': db['private_endpoint'],
+                                    'private_endpoint_label': db['private_endpoint_label'],
                                     'nsg_ids': "",
                                     'nsg_names': "",
                                     'whitelisted_ips': db['whitelisted_ips'],

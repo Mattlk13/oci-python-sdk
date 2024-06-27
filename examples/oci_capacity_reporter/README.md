@@ -56,7 +56,7 @@ Please follow [Oracle Python SDK Documentation](https://github.com/oracle/oci-py
 Execute  
 
 ```
-$ python3 oci_capacity_reporter_gui.py -help  
+$ python3 oci_capacity_reporter_gui.py --help  
 
 options:
   -h, --help         show this help message and exit
@@ -64,6 +64,7 @@ options:
   -t CONFIG_PROFILE  Config Profile inside the config file
   -p PROXY           Set Proxy (i.e. www-proxy-server.com:80)
   -ip                Use Instance Principals for Authentication
+  -is                Use Config and Security Token
 ```
 
 ## Check Other Projects
