@@ -1,9 +1,9 @@
-PullRequestChangeSummaryMetrics
+CreateCostAnomalyMonitorDetails
 ===============================
 
-.. currentmodule:: oci.devops.models
+.. currentmodule:: oci.budget.models
 
-.. autoclass:: PullRequestChangeSummaryMetrics
+.. autoclass:: CreateCostAnomalyMonitorDetails
     :show-inheritance:
     :special-members: __init__
     :members:

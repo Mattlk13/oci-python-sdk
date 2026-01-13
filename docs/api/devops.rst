@@ -89,6 +89,7 @@ Devops
     oci.devops.models.CommitAnalyticsAuthorCollection
     oci.devops.models.CommitAnalyticsAuthorSummary
     oci.devops.models.CommitInfo
+    oci.devops.models.CommitMessageSettings
     oci.devops.models.ComputeInstanceGroupBlueGreenDeployStage
     oci.devops.models.ComputeInstanceGroupBlueGreenDeployStageExecutionProgress
     oci.devops.models.ComputeInstanceGroupBlueGreenDeployStageSummary
@@ -391,14 +392,11 @@ Devops
     oci.devops.models.PullRequestAttachmentSummary
     oci.devops.models.PullRequestAuthorCollection
     oci.devops.models.PullRequestAuthorSummary
-    oci.devops.models.PullRequestChangeSummaryMetrics
     oci.devops.models.PullRequestCollection
     oci.devops.models.PullRequestComment
     oci.devops.models.PullRequestCommentCollection
     oci.devops.models.PullRequestCommentLikeCollection
     oci.devops.models.PullRequestCommentSummary
-    oci.devops.models.PullRequestFileChangeCollection
-    oci.devops.models.PullRequestFileChangeSummary
     oci.devops.models.PullRequestLifecycleActivitySummary
     oci.devops.models.PullRequestNotificationPreference
     oci.devops.models.PullRequestSummary
@@ -424,6 +422,7 @@ Devops
     oci.devops.models.RepositoryNotificationPreference
     oci.devops.models.RepositoryObject
     oci.devops.models.RepositoryPathCollection
+    oci.devops.models.RepositoryPathCommitDetails
     oci.devops.models.RepositoryPathSummary
     oci.devops.models.RepositoryRef
     oci.devops.models.RepositoryRefCollection
