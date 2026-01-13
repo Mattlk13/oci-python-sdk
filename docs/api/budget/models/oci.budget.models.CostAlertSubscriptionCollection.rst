@@ -1,9 +1,9 @@
-PullRequestFileChangeCollection
+CostAlertSubscriptionCollection
 ===============================
 
-.. currentmodule:: oci.devops.models
+.. currentmodule:: oci.budget.models
 
-.. autoclass:: PullRequestFileChangeCollection
+.. autoclass:: CostAlertSubscriptionCollection
     :show-inheritance:
     :special-members: __init__
     :members:

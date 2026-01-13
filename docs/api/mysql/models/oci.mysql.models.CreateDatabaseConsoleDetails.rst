@@ -1,9 +1,9 @@
-PullRequestFileChangeSummary
+CreateDatabaseConsoleDetails
 ============================
 
-.. currentmodule:: oci.devops.models
+.. currentmodule:: oci.mysql.models
 
-.. autoclass:: PullRequestFileChangeSummary
+.. autoclass:: CreateDatabaseConsoleDetails
     :show-inheritance:
     :special-members: __init__
     :members:
