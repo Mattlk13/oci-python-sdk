@@ -33,6 +33,7 @@ Database
     oci.database.models.ApplicationVipSummary
     oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AssociatedLongTermBackup
+    oci.database.models.AssociatedResourceDetails
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackup
@@ -112,6 +113,7 @@ Database
     oci.database.models.ChangeCloudVmClusterSubscriptionDetails
     oci.database.models.ChangeCompartmentDetails
     oci.database.models.ChangeDataguardRoleDetails
+    oci.database.models.ChangeDbConnectionBundleCompartmentDetails
     oci.database.models.ChangeDisasterRecoveryConfigurationDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeExadbVmClusterCompartmentDetails
@@ -190,6 +192,7 @@ Database
     oci.database.models.CreateDatabaseFromDatabase
     oci.database.models.CreateDatabaseFromDbSystemDetails
     oci.database.models.CreateDatabaseSoftwareImageDetails
+    oci.database.models.CreateDbConnectionBundleDetails
     oci.database.models.CreateDbHomeBase
     oci.database.models.CreateDbHomeDetails
     oci.database.models.CreateDbHomeFromBackupDetails
@@ -240,6 +243,7 @@ Database
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.DataGuardGroup
     oci.database.models.DataGuardGroupMember
+    oci.database.models.DataPatchOptions
     oci.database.models.Database
     oci.database.models.DatabaseConnectionCredentials
     oci.database.models.DatabaseConnectionCredentialsByDetails
@@ -264,6 +268,8 @@ Database
     oci.database.models.DatabaseUpgradeWithDbVersionDetails
     oci.database.models.DayOfWeek
     oci.database.models.DbBackupConfig
+    oci.database.models.DbConnectionBundle
+    oci.database.models.DbConnectionBundleSummary
     oci.database.models.DbHome
     oci.database.models.DbHomeFromAgentResourceId
     oci.database.models.DbHomeSummary
@@ -294,6 +300,7 @@ Database
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.DisasterRecoveryConfiguration
     oci.database.models.DiskPerformanceDetails
+    oci.database.models.DownloadDbConnectionBundleDetails
     oci.database.models.DownloadOneoffPatch
     oci.database.models.DrScanDetails
     oci.database.models.EditAutonomousContainerDatabaseDataguardDetails
@@ -365,6 +372,7 @@ Database
     oci.database.models.GoogleCloudProviderEncryptionKeyDetails
     oci.database.models.GranularMaintenanceHistoryDetails
     oci.database.models.IdentityConnectorDetails
+    oci.database.models.ImportTransportableTablespaceDetails
     oci.database.models.InfoForNetworkGenDetails
     oci.database.models.InfrastructureTargetVersion
     oci.database.models.InfrastructureTargetVersionSummary
@@ -408,6 +416,7 @@ Database
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry
     oci.database.models.PatchHistoryEntrySummary
+    oci.database.models.PatchOptions
     oci.database.models.PatchSummary
     oci.database.models.PdbConversionHistoryEntry
     oci.database.models.PdbConversionHistoryEntrySummary
@@ -427,6 +436,7 @@ Database
     oci.database.models.RefreshableCloneCollection
     oci.database.models.RefreshableCloneSummary
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
+    oci.database.models.RegisterCloudAutonomousVmClusterPkcsDetails
     oci.database.models.RegisterCloudVmClusterPkcsDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.ReinstateDataGuardDetails
@@ -450,6 +460,7 @@ Database
     oci.database.models.RotateAutonomousVmClusterSslCertsDetails
     oci.database.models.RotateCloudAutonomousVmClusterOrdsCertsDetails
     oci.database.models.RotateCloudAutonomousVmClusterSslCertsDetails
+    oci.database.models.RunDataPatchDetails
     oci.database.models.SaasAdminUserConfiguration
     oci.database.models.SaasAdminUserStatus
     oci.database.models.ScanDetails
@@ -477,6 +488,7 @@ Database
     oci.database.models.SystemVersionSummary
     oci.database.models.UndeleteAutonomousDatabaseDetails
     oci.database.models.UnmountDbnodeSnapshotDetails
+    oci.database.models.UnregisterCloudAutonomousVmClusterPkcsDetails
     oci.database.models.UnregisterCloudVmClusterPkcsDetails
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -498,6 +510,7 @@ Database
     oci.database.models.UpdateDataGuardDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDatabaseSoftwareImageDetails
+    oci.database.models.UpdateDbConnectionBundleDetails
     oci.database.models.UpdateDbHomeDetails
     oci.database.models.UpdateDbNodeDetails
     oci.database.models.UpdateDbSystemDetails
