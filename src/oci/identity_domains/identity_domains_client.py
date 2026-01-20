@@ -75,6 +75,10 @@ class IdentityDomainsClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
+
+        :param enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
+            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("identity_domains"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -114,6 +118,8 @@ class IdentityDomainsClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
+        if 'enable_strict_url_encoding' in kwargs:
+            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("identity_domains", config, signer, identity_domains_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -167,6 +173,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApiKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -183,6 +193,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -238,6 +249,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('api_key'),
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -250,6 +262,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('api_key'),
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -303,6 +316,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
         :rtype: :class:`~oci.response.Response`
 
@@ -319,6 +336,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -374,6 +392,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app'),
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -386,6 +405,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app'),
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -439,6 +459,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRole`
         :rtype: :class:`~oci.response.Response`
 
@@ -455,6 +479,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -510,6 +535,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_role'),
                 response_type="AppRole",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -522,6 +548,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_role'),
                 response_type="AppRole",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -575,6 +602,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflow`
         :rtype: :class:`~oci.response.Response`
 
@@ -591,6 +622,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -646,6 +678,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow'),
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -658,6 +691,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow'),
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -711,6 +745,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflowAssignment`
         :rtype: :class:`~oci.response.Response`
 
@@ -727,6 +765,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -782,6 +821,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow_assignment'),
                 response_type="ApprovalWorkflowAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -794,6 +834,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow_assignment'),
                 response_type="ApprovalWorkflowAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -847,6 +888,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflowStep`
         :rtype: :class:`~oci.response.Response`
 
@@ -863,6 +908,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -918,6 +964,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow_step'),
                 response_type="ApprovalWorkflowStep",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -930,6 +977,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow_step'),
                 response_type="ApprovalWorkflowStep",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -983,6 +1031,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthToken`
         :rtype: :class:`~oci.response.Response`
 
@@ -999,6 +1051,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1054,6 +1107,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('auth_token'),
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1066,6 +1120,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('auth_token'),
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1111,6 +1166,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthenticationFactorsRemover`
         :rtype: :class:`~oci.response.Response`
 
@@ -1127,6 +1186,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1165,6 +1225,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('authentication_factors_remover'),
                 response_type="AuthenticationFactorsRemover",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1176,6 +1237,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('authentication_factors_remover'),
                 response_type="AuthenticationFactorsRemover",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1229,6 +1291,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGate`
         :rtype: :class:`~oci.response.Response`
 
@@ -1245,6 +1311,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1300,6 +1367,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate'),
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1312,6 +1380,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate'),
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1365,6 +1434,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateMapping`
         :rtype: :class:`~oci.response.Response`
 
@@ -1381,6 +1454,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1436,6 +1510,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_mapping'),
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1448,6 +1523,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_mapping'),
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1501,6 +1577,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateServer`
         :rtype: :class:`~oci.response.Response`
 
@@ -1517,6 +1597,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1572,6 +1653,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_server'),
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1584,6 +1666,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_server'),
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1639,6 +1722,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Condition`
         :rtype: :class:`~oci.response.Response`
 
@@ -1655,6 +1742,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1710,6 +1798,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('condition'),
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1722,6 +1811,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('condition'),
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1775,6 +1865,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CustomerSecretKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -1791,6 +1885,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1846,6 +1941,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('customer_secret_key'),
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1858,6 +1954,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('customer_secret_key'),
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1911,6 +2008,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.DynamicResourceGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1927,6 +2028,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -1982,6 +2084,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('dynamic_resource_group'),
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1994,6 +2097,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('dynamic_resource_group'),
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2047,6 +2151,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grant`
         :rtype: :class:`~oci.response.Response`
 
@@ -2063,6 +2171,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2118,6 +2227,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('grant'),
                 response_type="Grant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2130,6 +2240,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('grant'),
                 response_type="Grant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2183,6 +2294,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Group`
         :rtype: :class:`~oci.response.Response`
 
@@ -2199,6 +2314,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2254,6 +2370,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('group'),
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2266,6 +2383,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('group'),
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2321,6 +2439,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityPropagationTrust`
         :rtype: :class:`~oci.response.Response`
 
@@ -2337,6 +2459,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2392,6 +2515,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_propagation_trust'),
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2404,6 +2528,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_propagation_trust'),
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2457,6 +2582,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -2473,6 +2602,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2528,6 +2658,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_provider'),
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2540,6 +2671,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_provider'),
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2593,6 +2725,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Me`
         :rtype: :class:`~oci.response.Response`
 
@@ -2609,6 +2745,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2664,6 +2801,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('me'),
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2676,6 +2814,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('me'),
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2721,6 +2860,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApiKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -2737,6 +2880,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2775,6 +2919,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_api_key'),
                 response_type="MyApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2786,6 +2931,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_api_key'),
                 response_type="MyApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2831,6 +2977,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyAuthToken`
         :rtype: :class:`~oci.response.Response`
 
@@ -2847,6 +2997,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2885,6 +3036,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_auth_token'),
                 response_type="MyAuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2896,6 +3048,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_auth_token'),
                 response_type="MyAuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2941,6 +3094,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyAuthenticationFactorInitiator`
         :rtype: :class:`~oci.response.Response`
 
@@ -2957,6 +3114,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -2995,6 +3153,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_authentication_factor_initiator'),
                 response_type="MyAuthenticationFactorInitiator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3006,6 +3165,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_authentication_factor_initiator'),
                 response_type="MyAuthenticationFactorInitiator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3051,6 +3211,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyAuthenticationFactorValidator`
         :rtype: :class:`~oci.response.Response`
 
@@ -3067,6 +3231,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3105,6 +3270,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_authentication_factor_validator'),
                 response_type="MyAuthenticationFactorValidator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3116,6 +3282,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_authentication_factor_validator'),
                 response_type="MyAuthenticationFactorValidator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3161,6 +3328,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyAuthenticationFactorsRemover`
         :rtype: :class:`~oci.response.Response`
 
@@ -3177,6 +3348,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3215,6 +3387,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_authentication_factors_remover'),
                 response_type="MyAuthenticationFactorsRemover",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3226,6 +3399,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_authentication_factors_remover'),
                 response_type="MyAuthenticationFactorsRemover",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3271,6 +3445,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyCustomerSecretKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -3287,6 +3465,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3325,6 +3504,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_customer_secret_key'),
                 response_type="MyCustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3336,6 +3516,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_customer_secret_key'),
                 response_type="MyCustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3381,6 +3562,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyOAuth2ClientCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -3397,6 +3582,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3435,6 +3621,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_o_auth2_client_credential'),
                 response_type="MyOAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3446,6 +3633,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_o_auth2_client_credential'),
                 response_type="MyOAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3499,6 +3687,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -3515,6 +3707,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3570,6 +3763,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_request'),
                 response_type="MyRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3582,6 +3776,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_request'),
                 response_type="MyRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3627,6 +3822,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MySmtpCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -3643,6 +3842,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3681,6 +3881,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_smtp_credential'),
                 response_type="MySmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3692,6 +3893,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_smtp_credential'),
                 response_type="MySmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3737,6 +3939,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MySupportAccount`
         :rtype: :class:`~oci.response.Response`
 
@@ -3753,6 +3959,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3791,6 +3998,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_support_account'),
                 response_type="MySupportAccount",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3802,6 +4010,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_support_account'),
                 response_type="MySupportAccount",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3847,6 +4056,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyUserDbCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -3863,6 +4076,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -3901,6 +4115,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_user_db_credential'),
                 response_type="MyUserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3912,6 +4127,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_user_db_credential'),
                 response_type="MyUserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3965,6 +4181,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NetworkPerimeter`
         :rtype: :class:`~oci.response.Response`
 
@@ -3981,6 +4201,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4036,6 +4257,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('network_perimeter'),
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4048,6 +4270,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('network_perimeter'),
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4101,6 +4324,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuth2ClientCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -4117,6 +4344,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4172,6 +4400,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth2_client_credential'),
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4184,6 +4413,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth2_client_credential'),
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4229,6 +4459,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthClientCertificate`
         :rtype: :class:`~oci.response.Response`
 
@@ -4245,6 +4479,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4283,6 +4518,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_client_certificate'),
                 response_type="OAuthClientCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4294,6 +4530,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_client_certificate'),
                 response_type="OAuthClientCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4339,6 +4576,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthPartnerCertificate`
         :rtype: :class:`~oci.response.Response`
 
@@ -4355,6 +4596,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4393,6 +4635,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_partner_certificate'),
                 response_type="OAuthPartnerCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4404,6 +4647,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_partner_certificate'),
                 response_type="OAuthPartnerCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4457,6 +4701,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.PasswordPolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -4473,6 +4721,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4528,6 +4777,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('password_policy'),
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4540,6 +4790,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('password_policy'),
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4595,6 +4846,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Policy`
         :rtype: :class:`~oci.response.Response`
 
@@ -4611,6 +4866,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4666,6 +4922,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('policy'),
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4678,6 +4935,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('policy'),
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4725,6 +4983,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.RestoreOciConsolePolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -4741,6 +5003,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4779,6 +5042,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('restore_oci_console_policy'),
                 response_type="RestoreOciConsolePolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4790,6 +5054,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('restore_oci_console_policy'),
                 response_type="RestoreOciConsolePolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4845,6 +5110,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Rule`
         :rtype: :class:`~oci.response.Response`
 
@@ -4861,6 +5130,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -4916,6 +5186,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('rule'),
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4928,6 +5199,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('rule'),
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4981,6 +5253,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestion`
         :rtype: :class:`~oci.response.Response`
 
@@ -4997,6 +5273,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5052,6 +5329,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question'),
                 response_type="SecurityQuestion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5064,6 +5342,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question'),
                 response_type="SecurityQuestion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5117,6 +5396,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SelfRegistrationProfile`
         :rtype: :class:`~oci.response.Response`
 
@@ -5133,6 +5416,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5188,6 +5472,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('self_registration_profile'),
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5200,6 +5485,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('self_registration_profile'),
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5253,6 +5539,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SmtpCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -5269,6 +5559,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5324,6 +5615,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('smtp_credential'),
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5336,6 +5628,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('smtp_credential'),
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5383,6 +5676,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SocialIdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -5399,6 +5696,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5437,6 +5735,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('social_identity_provider'),
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5448,6 +5747,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('social_identity_provider'),
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5501,6 +5801,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.User`
         :rtype: :class:`~oci.response.Response`
 
@@ -5517,6 +5821,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5572,6 +5877,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user'),
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5584,6 +5890,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user'),
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5637,6 +5944,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserDbCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -5653,6 +5964,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5708,6 +6020,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_db_credential'),
                 response_type="UserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5720,6 +6033,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_db_credential'),
                 response_type="UserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5759,6 +6073,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5775,6 +6093,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5830,6 +6149,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5841,6 +6161,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5880,6 +6201,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5896,6 +6221,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -5951,6 +6277,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5962,6 +6289,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6001,6 +6329,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6017,6 +6349,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6072,6 +6405,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6083,6 +6417,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6122,6 +6457,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6138,6 +6477,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6193,6 +6533,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6204,6 +6545,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6243,6 +6585,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6259,6 +6605,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6314,6 +6661,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6325,6 +6673,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6364,6 +6713,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6380,6 +6733,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6435,6 +6789,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6446,6 +6801,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6485,6 +6841,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6501,6 +6861,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6556,6 +6917,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6567,6 +6929,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6606,6 +6969,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6622,6 +6989,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6677,6 +7045,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6688,6 +7057,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6727,6 +7097,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6743,6 +7117,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6798,6 +7173,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6809,6 +7185,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6848,6 +7225,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6864,6 +7245,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -6919,6 +7301,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6930,6 +7313,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6969,6 +7353,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6985,6 +7373,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7040,6 +7429,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7051,6 +7441,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7090,6 +7481,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7106,6 +7501,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7161,6 +7557,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7172,6 +7569,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7211,6 +7609,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7227,6 +7629,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7282,6 +7685,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7293,6 +7697,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7332,6 +7737,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7348,6 +7757,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7403,6 +7813,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7414,6 +7825,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7453,6 +7865,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7469,6 +7885,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7524,6 +7941,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7535,6 +7953,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7574,6 +7993,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7590,6 +8013,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7645,6 +8069,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7656,6 +8081,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7695,6 +8121,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7711,6 +8141,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7766,6 +8197,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7777,6 +8209,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7816,6 +8249,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7832,6 +8269,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -7887,6 +8325,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7898,6 +8337,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7937,6 +8377,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7953,6 +8397,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8008,6 +8453,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8019,6 +8465,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8058,6 +8505,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8074,6 +8525,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8129,6 +8581,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8140,6 +8593,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8179,6 +8633,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8195,6 +8653,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8250,6 +8709,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8261,6 +8721,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8300,6 +8761,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8316,6 +8781,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8371,6 +8837,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8382,6 +8849,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8421,6 +8889,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8437,6 +8909,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8492,6 +8965,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8503,6 +8977,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8542,6 +9017,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8558,6 +9037,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8613,6 +9093,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8624,6 +9105,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8663,6 +9145,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8679,6 +9165,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8734,6 +9221,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8745,6 +9233,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8784,6 +9273,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8800,6 +9293,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8855,6 +9349,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8866,6 +9361,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8905,6 +9401,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8921,6 +9421,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -8976,6 +9477,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8987,6 +9489,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9026,6 +9529,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9042,6 +9549,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9097,6 +9605,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9108,6 +9617,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9147,6 +9657,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9163,6 +9677,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9218,6 +9733,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9229,6 +9745,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9268,6 +9785,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9284,6 +9805,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9339,6 +9861,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9350,6 +9873,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9389,6 +9913,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9405,6 +9933,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9460,6 +9989,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9471,6 +10001,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9510,6 +10041,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9526,6 +10061,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9581,6 +10117,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9592,6 +10129,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9631,6 +10169,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9647,6 +10189,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9702,6 +10245,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9713,6 +10257,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9752,6 +10297,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9768,6 +10317,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9823,6 +10373,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9834,6 +10385,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9873,6 +10425,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -9889,6 +10445,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -9944,6 +10501,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9955,6 +10513,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9994,6 +10553,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -10010,6 +10573,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10065,6 +10629,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10076,6 +10641,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10115,6 +10681,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -10131,6 +10701,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10186,6 +10757,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10197,6 +10769,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10236,6 +10809,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -10252,6 +10829,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10307,6 +10885,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10318,6 +10897,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10357,6 +10937,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -10373,6 +10957,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10428,6 +11013,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10439,6 +11025,7 @@ class IdentityDomainsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10480,6 +11067,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountMgmtInfo`
         :rtype: :class:`~oci.response.Response`
 
@@ -10496,6 +11087,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10560,6 +11152,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountMgmtInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10572,6 +11165,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountMgmtInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10613,6 +11207,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -10629,6 +11227,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10693,6 +11292,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountRecoverySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10705,6 +11305,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountRecoverySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10746,6 +11347,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApiKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -10762,6 +11367,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10826,6 +11432,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10838,6 +11445,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10879,6 +11487,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
         :rtype: :class:`~oci.response.Response`
 
@@ -10895,6 +11507,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -10959,6 +11572,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10971,6 +11585,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11012,6 +11627,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRole`
         :rtype: :class:`~oci.response.Response`
 
@@ -11028,6 +11647,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -11092,6 +11712,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AppRole",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11104,6 +11725,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AppRole",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11145,6 +11767,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflow`
         :rtype: :class:`~oci.response.Response`
 
@@ -11161,6 +11787,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -11225,6 +11852,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11237,6 +11865,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11278,6 +11907,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflowAssignment`
         :rtype: :class:`~oci.response.Response`
 
@@ -11294,6 +11927,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -11358,6 +11992,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11370,6 +12005,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11411,6 +12047,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflowStep`
         :rtype: :class:`~oci.response.Response`
 
@@ -11427,6 +12067,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -11491,6 +12132,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowStep",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11503,6 +12145,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowStep",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11544,6 +12187,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthToken`
         :rtype: :class:`~oci.response.Response`
 
@@ -11560,6 +12207,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -11624,6 +12272,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11636,6 +12285,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11677,6 +12327,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthenticationFactorSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -11693,6 +12347,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -11757,6 +12412,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthenticationFactorSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11769,6 +12425,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthenticationFactorSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11810,6 +12467,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.BrandingSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -11826,6 +12487,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -11890,6 +12552,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="BrandingSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11902,6 +12565,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="BrandingSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11943,6 +12607,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGate`
         :rtype: :class:`~oci.response.Response`
 
@@ -11959,6 +12627,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12023,6 +12692,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12035,6 +12705,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12076,6 +12747,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateMapping`
         :rtype: :class:`~oci.response.Response`
 
@@ -12092,6 +12767,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12156,6 +12832,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12168,6 +12845,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12209,6 +12887,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateServer`
         :rtype: :class:`~oci.response.Response`
 
@@ -12225,6 +12907,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12289,6 +12972,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12301,6 +12985,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12342,6 +13027,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Condition`
         :rtype: :class:`~oci.response.Response`
 
@@ -12358,6 +13047,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12422,6 +13112,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12434,6 +13125,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12475,6 +13167,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CustomerSecretKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -12491,6 +13187,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12555,6 +13252,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12567,6 +13265,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12608,6 +13307,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.DynamicResourceGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -12624,6 +13327,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12688,6 +13392,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12700,6 +13405,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12741,6 +13447,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grant`
         :rtype: :class:`~oci.response.Response`
 
@@ -12757,6 +13467,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12821,6 +13532,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Grant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12833,6 +13545,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Grant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12874,6 +13587,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Group`
         :rtype: :class:`~oci.response.Response`
 
@@ -12890,6 +13607,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -12954,6 +13672,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12966,6 +13685,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13007,6 +13727,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityPropagationTrust`
         :rtype: :class:`~oci.response.Response`
 
@@ -13023,6 +13747,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13087,6 +13812,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13099,6 +13825,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13140,6 +13867,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -13156,6 +13887,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13220,6 +13952,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13232,6 +13965,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13273,6 +14007,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -13289,6 +14027,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13353,6 +14092,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentitySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13365,6 +14105,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentitySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13406,6 +14147,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.KmsiSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -13422,6 +14167,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13486,6 +14232,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="KmsiSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13498,6 +14245,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="KmsiSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13539,6 +14287,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MappedAttribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -13555,6 +14307,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13619,6 +14372,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MappedAttribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13631,6 +14385,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MappedAttribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13669,6 +14424,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Me`
         :rtype: :class:`~oci.response.Response`
 
@@ -13685,6 +14444,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13738,6 +14498,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13749,6 +14510,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13782,6 +14544,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApiKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -13798,6 +14564,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13845,6 +14612,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13856,6 +14624,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13889,6 +14658,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyAuthToken`
         :rtype: :class:`~oci.response.Response`
 
@@ -13905,6 +14678,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -13952,6 +14726,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyAuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13963,6 +14738,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyAuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13996,6 +14772,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyCompletedApproval`
         :rtype: :class:`~oci.response.Response`
 
@@ -14012,6 +14792,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14059,6 +14840,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCompletedApproval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14070,6 +14852,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCompletedApproval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14103,6 +14886,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyCustomerSecretKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -14119,6 +14906,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14166,6 +14954,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14177,6 +14966,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14218,6 +15008,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyDevice`
         :rtype: :class:`~oci.response.Response`
 
@@ -14234,6 +15028,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14298,6 +15093,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14310,6 +15106,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14343,6 +15140,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyOAuth2ClientCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -14359,6 +15160,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14406,6 +15208,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyOAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14417,6 +15220,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyOAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14450,6 +15254,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyPendingApproval`
         :rtype: :class:`~oci.response.Response`
 
@@ -14466,6 +15274,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14513,6 +15322,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyPendingApproval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14524,6 +15334,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyPendingApproval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14565,6 +15376,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -14581,6 +15396,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14645,6 +15461,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14657,6 +15474,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14690,6 +15508,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MySmtpCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -14706,6 +15528,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14753,6 +15576,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14764,6 +15588,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14797,6 +15622,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MySupportAccount`
         :rtype: :class:`~oci.response.Response`
 
@@ -14813,6 +15642,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14860,6 +15690,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySupportAccount",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14871,6 +15702,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySupportAccount",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14912,6 +15744,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyTrustedUserAgent`
         :rtype: :class:`~oci.response.Response`
 
@@ -14928,6 +15764,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -14992,6 +15829,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyTrustedUserAgent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15004,6 +15842,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyTrustedUserAgent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15037,6 +15876,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyUserDbCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -15053,6 +15896,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15100,6 +15944,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyUserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15111,6 +15956,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyUserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15152,6 +15998,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NetworkPerimeter`
         :rtype: :class:`~oci.response.Response`
 
@@ -15168,6 +16018,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15232,6 +16083,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15244,6 +16096,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15285,6 +16138,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NotificationSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -15301,6 +16158,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15365,6 +16223,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NotificationSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15377,6 +16236,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NotificationSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15418,6 +16278,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuth2ClientCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -15434,6 +16298,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15498,6 +16363,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15510,6 +16376,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15543,6 +16410,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthClientCertificate`
         :rtype: :class:`~oci.response.Response`
 
@@ -15559,6 +16430,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15606,6 +16478,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthClientCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15617,6 +16490,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthClientCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15650,6 +16524,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthPartnerCertificate`
         :rtype: :class:`~oci.response.Response`
 
@@ -15666,6 +16544,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15713,6 +16592,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthPartnerCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15724,6 +16604,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthPartnerCertificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15765,6 +16646,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OciConsoleSignOnPolicyConsent`
         :rtype: :class:`~oci.response.Response`
 
@@ -15781,6 +16666,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15845,6 +16731,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OciConsoleSignOnPolicyConsent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15857,6 +16744,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OciConsoleSignOnPolicyConsent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15898,6 +16786,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.PasswordPolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -15914,6 +16806,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -15978,6 +16871,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15990,6 +16884,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16031,6 +16926,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Policy`
         :rtype: :class:`~oci.response.Response`
 
@@ -16047,6 +16946,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -16111,6 +17011,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16123,6 +17024,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16164,6 +17066,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Rule`
         :rtype: :class:`~oci.response.Response`
 
@@ -16180,6 +17086,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -16244,6 +17151,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16256,6 +17164,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16289,6 +17198,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Schema`
         :rtype: :class:`~oci.response.Response`
 
@@ -16305,6 +17218,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -16352,6 +17266,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16363,6 +17278,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16404,6 +17320,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestion`
         :rtype: :class:`~oci.response.Response`
 
@@ -16420,6 +17340,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -16484,6 +17405,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16496,6 +17418,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16537,6 +17460,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -16553,6 +17480,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -16617,6 +17545,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestionSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16629,6 +17558,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestionSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16670,6 +17600,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SelfRegistrationProfile`
         :rtype: :class:`~oci.response.Response`
 
@@ -16686,6 +17620,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -16750,6 +17685,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16762,6 +17698,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16803,6 +17740,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Setting`
         :rtype: :class:`~oci.response.Response`
 
@@ -16819,6 +17760,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -16883,6 +17825,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Setting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16895,6 +17838,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Setting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16936,6 +17880,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SmtpCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -16952,6 +17900,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -17016,6 +17965,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17028,6 +17978,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17061,6 +18012,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SocialIdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -17077,6 +18032,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -17124,6 +18080,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17135,6 +18092,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17176,6 +18134,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.User`
         :rtype: :class:`~oci.response.Response`
 
@@ -17192,6 +18154,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -17256,6 +18219,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17268,6 +18232,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17309,6 +18274,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -17325,6 +18294,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -17389,6 +18359,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserAttributesSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17401,6 +18372,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserAttributesSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17442,6 +18414,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserDbCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -17458,6 +18434,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -17522,6 +18499,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17534,6 +18512,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserDbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17597,6 +18576,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountMgmtInfos`
         :rtype: :class:`~oci.response.Response`
 
@@ -17613,6 +18596,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -17687,6 +18671,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountMgmtInfos",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17698,6 +18683,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountMgmtInfos",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17742,6 +18728,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -17758,6 +18748,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -17815,6 +18806,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountRecoverySettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17826,6 +18818,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AccountRecoverySettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17889,6 +18882,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApiKeys`
         :rtype: :class:`~oci.response.Response`
 
@@ -17905,6 +18902,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -17979,6 +18977,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApiKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17990,6 +18989,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApiKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18053,6 +19053,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRoles`
         :rtype: :class:`~oci.response.Response`
 
@@ -18069,6 +19073,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -18143,6 +19148,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AppRoles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18154,6 +19160,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AppRoles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18217,6 +19224,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflowAssignments`
         :rtype: :class:`~oci.response.Response`
 
@@ -18233,6 +19244,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -18307,6 +19319,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowAssignments",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18318,6 +19331,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowAssignments",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18381,6 +19395,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflowSteps`
         :rtype: :class:`~oci.response.Response`
 
@@ -18397,6 +19415,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -18471,6 +19490,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowSteps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18482,6 +19502,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflowSteps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18545,6 +19566,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflows`
         :rtype: :class:`~oci.response.Response`
 
@@ -18561,6 +19586,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -18635,6 +19661,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflows",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18646,6 +19673,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ApprovalWorkflows",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18709,6 +19737,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Apps`
         :rtype: :class:`~oci.response.Response`
 
@@ -18725,6 +19757,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -18799,6 +19832,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Apps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18810,6 +19844,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Apps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18873,6 +19908,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthTokens`
         :rtype: :class:`~oci.response.Response`
 
@@ -18889,6 +19928,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -18963,6 +20003,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthTokens",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18974,6 +20015,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthTokens",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19018,6 +20060,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthenticationFactorSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -19034,6 +20080,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -19091,6 +20138,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthenticationFactorSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19102,6 +20150,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="AuthenticationFactorSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19146,6 +20195,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.BrandingSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -19162,6 +20215,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -19219,6 +20273,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="BrandingSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19230,6 +20285,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="BrandingSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19293,6 +20349,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateMappings`
         :rtype: :class:`~oci.response.Response`
 
@@ -19309,6 +20369,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -19383,6 +20444,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateMappings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19394,6 +20456,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateMappings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19457,6 +20520,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateServers`
         :rtype: :class:`~oci.response.Response`
 
@@ -19473,6 +20540,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -19547,6 +20615,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateServers",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19558,6 +20627,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGateServers",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19621,6 +20691,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGates`
         :rtype: :class:`~oci.response.Response`
 
@@ -19637,6 +20711,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -19711,6 +20786,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19722,6 +20798,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CloudGates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19785,6 +20862,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Conditions`
         :rtype: :class:`~oci.response.Response`
 
@@ -19801,6 +20882,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -19875,6 +20957,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Conditions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19886,6 +20969,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Conditions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19949,6 +21033,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CustomerSecretKeys`
         :rtype: :class:`~oci.response.Response`
 
@@ -19965,6 +21053,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -20039,6 +21128,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CustomerSecretKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20050,6 +21140,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="CustomerSecretKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20113,6 +21204,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.DynamicResourceGroups`
         :rtype: :class:`~oci.response.Response`
 
@@ -20129,6 +21224,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -20203,6 +21299,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="DynamicResourceGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20214,6 +21311,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="DynamicResourceGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20277,6 +21375,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grants`
         :rtype: :class:`~oci.response.Response`
 
@@ -20293,6 +21395,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -20367,6 +21470,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Grants",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20378,6 +21482,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Grants",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20441,6 +21546,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Groups`
         :rtype: :class:`~oci.response.Response`
 
@@ -20457,6 +21566,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -20531,6 +21641,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Groups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20542,6 +21653,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Groups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20605,6 +21717,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityPropagationTrusts`
         :rtype: :class:`~oci.response.Response`
 
@@ -20621,6 +21737,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -20695,6 +21812,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityPropagationTrusts",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20706,6 +21824,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityPropagationTrusts",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20769,6 +21888,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProviders`
         :rtype: :class:`~oci.response.Response`
 
@@ -20785,6 +21908,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -20859,6 +21983,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20870,6 +21995,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20914,6 +22040,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -20930,6 +22060,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -20987,6 +22118,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentitySettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20998,6 +22130,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="IdentitySettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21042,6 +22175,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.KmsiSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -21058,6 +22195,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -21115,6 +22253,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="KmsiSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21126,6 +22265,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="KmsiSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21189,6 +22329,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MappedAttributes`
         :rtype: :class:`~oci.response.Response`
 
@@ -21205,6 +22349,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -21279,6 +22424,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MappedAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21290,6 +22436,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MappedAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21345,6 +22492,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApiKeys`
         :rtype: :class:`~oci.response.Response`
 
@@ -21361,6 +22512,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -21423,6 +22575,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyApiKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21434,6 +22587,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyApiKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21489,6 +22643,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApps`
         :rtype: :class:`~oci.response.Response`
 
@@ -21505,6 +22663,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -21567,6 +22726,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyApps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21578,6 +22738,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyApps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21633,6 +22794,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyAuthTokens`
         :rtype: :class:`~oci.response.Response`
 
@@ -21649,6 +22814,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -21711,6 +22877,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyAuthTokens",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21722,6 +22889,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyAuthTokens",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21777,6 +22945,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyCompletedApprovals`
         :rtype: :class:`~oci.response.Response`
 
@@ -21793,6 +22965,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -21855,6 +23028,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCompletedApprovals",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21866,6 +23040,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCompletedApprovals",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -21921,6 +23096,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyCustomerSecretKeys`
         :rtype: :class:`~oci.response.Response`
 
@@ -21937,6 +23116,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -21999,6 +23179,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCustomerSecretKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22010,6 +23191,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyCustomerSecretKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22073,6 +23255,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyDevices`
         :rtype: :class:`~oci.response.Response`
 
@@ -22089,6 +23275,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -22163,6 +23350,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyDevices",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22174,6 +23362,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyDevices",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22237,6 +23426,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyGroups`
         :rtype: :class:`~oci.response.Response`
 
@@ -22253,6 +23446,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -22327,6 +23521,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22338,6 +23533,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22393,6 +23589,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyOAuth2ClientCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -22409,6 +23609,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -22471,6 +23672,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyOAuth2ClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22482,6 +23684,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyOAuth2ClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22537,6 +23740,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyPendingApprovals`
         :rtype: :class:`~oci.response.Response`
 
@@ -22553,6 +23760,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -22615,6 +23823,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyPendingApprovals",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22626,6 +23835,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyPendingApprovals",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22681,6 +23891,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequestableGroups`
         :rtype: :class:`~oci.response.Response`
 
@@ -22697,6 +23911,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -22759,6 +23974,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyRequestableGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22770,6 +23986,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyRequestableGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22833,6 +24050,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequests`
         :rtype: :class:`~oci.response.Response`
 
@@ -22849,6 +24070,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -22923,6 +24145,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyRequests",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22934,6 +24157,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyRequests",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -22989,6 +24213,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MySmtpCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -23005,6 +24233,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -23067,6 +24296,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySmtpCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23078,6 +24308,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySmtpCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23133,6 +24364,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MySupportAccounts`
         :rtype: :class:`~oci.response.Response`
 
@@ -23149,6 +24384,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -23211,6 +24447,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySupportAccounts",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23222,6 +24459,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MySupportAccounts",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23285,6 +24523,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyTrustedUserAgents`
         :rtype: :class:`~oci.response.Response`
 
@@ -23301,6 +24543,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -23375,6 +24618,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyTrustedUserAgents",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23386,6 +24630,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyTrustedUserAgents",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23441,6 +24686,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyUserDbCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -23457,6 +24706,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -23519,6 +24769,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyUserDbCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23530,6 +24781,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="MyUserDbCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23593,6 +24845,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NetworkPerimeters`
         :rtype: :class:`~oci.response.Response`
 
@@ -23609,6 +24865,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -23683,6 +24940,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NetworkPerimeters",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23694,6 +24952,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NetworkPerimeters",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23738,6 +24997,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NotificationSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -23754,6 +25017,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -23811,6 +25075,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NotificationSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23822,6 +25087,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="NotificationSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23885,6 +25151,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuth2ClientCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -23901,6 +25171,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -23975,6 +25246,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuth2ClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -23986,6 +25258,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuth2ClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24041,6 +25314,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthClientCertificates`
         :rtype: :class:`~oci.response.Response`
 
@@ -24057,6 +25334,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -24119,6 +25397,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthClientCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24130,6 +25409,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthClientCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24185,6 +25465,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthPartnerCertificates`
         :rtype: :class:`~oci.response.Response`
 
@@ -24201,6 +25485,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -24263,6 +25548,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthPartnerCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24274,6 +25560,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OAuthPartnerCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24337,6 +25624,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OciConsoleSignOnPolicyConsents`
         :rtype: :class:`~oci.response.Response`
 
@@ -24353,6 +25644,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -24427,6 +25719,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OciConsoleSignOnPolicyConsents",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24438,6 +25731,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="OciConsoleSignOnPolicyConsents",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24501,6 +25795,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.PasswordPolicies`
         :rtype: :class:`~oci.response.Response`
 
@@ -24517,6 +25815,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -24591,6 +25890,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="PasswordPolicies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24602,6 +25902,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="PasswordPolicies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24665,6 +25966,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Policies`
         :rtype: :class:`~oci.response.Response`
 
@@ -24681,6 +25986,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -24755,6 +26061,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Policies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24766,6 +26073,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Policies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24829,6 +26137,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ResourceTypeSchemaAttributes`
         :rtype: :class:`~oci.response.Response`
 
@@ -24845,6 +26157,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -24919,6 +26232,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ResourceTypeSchemaAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24930,6 +26244,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="ResourceTypeSchemaAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -24993,6 +26308,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Rules`
         :rtype: :class:`~oci.response.Response`
 
@@ -25009,6 +26328,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -25083,6 +26403,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Rules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25094,6 +26415,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Rules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25146,6 +26468,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Schemas`
         :rtype: :class:`~oci.response.Response`
 
@@ -25162,6 +26488,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "sort_by",
             "sort_order",
@@ -25222,6 +26549,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Schemas",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25233,6 +26561,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Schemas",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25277,6 +26606,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -25293,6 +26626,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -25350,6 +26684,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestionSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25361,6 +26696,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestionSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25424,6 +26760,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestions`
         :rtype: :class:`~oci.response.Response`
 
@@ -25440,6 +26780,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -25514,6 +26855,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25525,6 +26867,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SecurityQuestions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25588,6 +26931,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SelfRegistrationProfiles`
         :rtype: :class:`~oci.response.Response`
 
@@ -25604,6 +26951,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -25678,6 +27026,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SelfRegistrationProfiles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25689,6 +27038,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SelfRegistrationProfiles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25733,6 +27083,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Settings`
         :rtype: :class:`~oci.response.Response`
 
@@ -25749,6 +27103,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -25806,6 +27161,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Settings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25817,6 +27173,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Settings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25880,6 +27237,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SmtpCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -25896,6 +27257,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -25970,6 +27332,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SmtpCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -25981,6 +27344,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SmtpCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26036,6 +27400,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SocialIdentityProviders`
         :rtype: :class:`~oci.response.Response`
 
@@ -26052,6 +27420,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -26114,6 +27483,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SocialIdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26125,6 +27495,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="SocialIdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26169,6 +27540,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -26185,6 +27560,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "attributes",
             "attribute_sets",
@@ -26242,6 +27618,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserAttributesSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26253,6 +27630,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserAttributesSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26316,6 +27694,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserDbCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -26332,6 +27714,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -26406,6 +27789,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserDbCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26417,6 +27801,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="UserDbCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26480,6 +27865,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Users`
         :rtype: :class:`~oci.response.Response`
 
@@ -26496,6 +27885,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "filter",
             "sort_by",
@@ -26570,6 +27960,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Users",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26581,6 +27972,7 @@ class IdentityDomainsClient(object):
                 header_params=header_params,
                 response_type="Users",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26640,6 +28032,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -26656,6 +28052,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -26724,6 +28121,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="AccountRecoverySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26737,6 +28135,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="AccountRecoverySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26796,6 +28195,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApiKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -26812,6 +28215,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -26880,6 +28284,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26893,6 +28298,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -26952,6 +28358,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
         :rtype: :class:`~oci.response.Response`
 
@@ -26968,6 +28378,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -27036,6 +28447,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27049,6 +28461,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27108,6 +28521,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRole`
         :rtype: :class:`~oci.response.Response`
 
@@ -27124,6 +28541,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -27192,6 +28610,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="AppRole",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27205,6 +28624,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="AppRole",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27264,6 +28684,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflow`
         :rtype: :class:`~oci.response.Response`
 
@@ -27280,6 +28704,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -27348,6 +28773,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27361,6 +28787,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27420,6 +28847,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflowStep`
         :rtype: :class:`~oci.response.Response`
 
@@ -27436,6 +28867,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -27504,6 +28936,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="ApprovalWorkflowStep",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27517,6 +28950,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="ApprovalWorkflowStep",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27576,6 +29010,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthToken`
         :rtype: :class:`~oci.response.Response`
 
@@ -27592,6 +29030,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -27660,6 +29099,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27673,6 +29113,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27732,6 +29173,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGate`
         :rtype: :class:`~oci.response.Response`
 
@@ -27748,6 +29193,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -27816,6 +29262,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27829,6 +29276,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27888,6 +29336,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateMapping`
         :rtype: :class:`~oci.response.Response`
 
@@ -27904,6 +29356,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -27972,6 +29425,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -27985,6 +29439,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28044,6 +29499,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateServer`
         :rtype: :class:`~oci.response.Response`
 
@@ -28060,6 +29519,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -28128,6 +29588,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28141,6 +29602,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28202,6 +29664,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Condition`
         :rtype: :class:`~oci.response.Response`
 
@@ -28218,6 +29684,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -28286,6 +29753,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28299,6 +29767,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28358,6 +29827,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CustomerSecretKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -28374,6 +29847,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -28442,6 +29916,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28455,6 +29930,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28514,6 +29990,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.DynamicResourceGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -28530,6 +30010,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -28598,6 +30079,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28611,6 +30093,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28670,6 +30153,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grant`
         :rtype: :class:`~oci.response.Response`
 
@@ -28686,6 +30173,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -28754,6 +30242,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Grant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28767,6 +30256,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Grant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28826,6 +30316,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Group`
         :rtype: :class:`~oci.response.Response`
 
@@ -28842,6 +30336,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -28910,6 +30405,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28923,6 +30419,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -28984,6 +30481,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityPropagationTrust`
         :rtype: :class:`~oci.response.Response`
 
@@ -29000,6 +30501,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -29068,6 +30570,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29081,6 +30584,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29140,6 +30644,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -29156,6 +30664,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -29224,6 +30733,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29237,6 +30747,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29296,6 +30807,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -29312,6 +30827,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -29380,6 +30896,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="IdentitySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29393,6 +30910,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="IdentitySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29452,6 +30970,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.KmsiSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -29468,6 +30990,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -29536,6 +31059,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="KmsiSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29549,6 +31073,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="KmsiSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29610,6 +31135,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MappedAttribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -29626,6 +31155,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -29694,6 +31224,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MappedAttribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29707,6 +31238,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MappedAttribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29763,6 +31295,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Me`
         :rtype: :class:`~oci.response.Response`
 
@@ -29779,6 +31315,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -29836,6 +31373,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29848,6 +31386,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29899,6 +31438,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApiKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -29915,6 +31458,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -29966,6 +31510,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -29978,6 +31523,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30029,6 +31575,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyAuthToken`
         :rtype: :class:`~oci.response.Response`
 
@@ -30045,6 +31595,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -30096,6 +31647,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyAuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30108,6 +31660,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyAuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30159,6 +31712,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyCustomerSecretKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -30175,6 +31732,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -30226,6 +31784,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyCustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30238,6 +31797,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyCustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30297,6 +31857,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyDevice`
         :rtype: :class:`~oci.response.Response`
 
@@ -30313,6 +31877,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -30381,6 +31946,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30394,6 +31960,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30445,6 +32012,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyOAuth2ClientCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -30461,6 +32032,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -30512,6 +32084,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyOAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30524,6 +32097,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyOAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30575,6 +32149,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyPendingApproval`
         :rtype: :class:`~oci.response.Response`
 
@@ -30591,6 +32169,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -30642,6 +32221,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyPendingApproval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30654,6 +32234,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyPendingApproval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30713,6 +32294,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -30729,6 +32314,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -30797,6 +32383,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30810,6 +32397,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MyRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30861,6 +32449,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MySmtpCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -30877,6 +32469,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -30928,6 +32521,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MySmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30940,6 +32534,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="MySmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -30999,6 +32594,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NetworkPerimeter`
         :rtype: :class:`~oci.response.Response`
 
@@ -31015,6 +32614,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -31083,6 +32683,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31096,6 +32697,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31155,6 +32757,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuth2ClientCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -31171,6 +32777,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -31239,6 +32846,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31252,6 +32860,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31311,6 +32920,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.PasswordPolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -31327,6 +32940,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -31395,6 +33009,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31408,6 +33023,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31469,6 +33085,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Policy`
         :rtype: :class:`~oci.response.Response`
 
@@ -31485,6 +33105,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -31553,6 +33174,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31566,6 +33188,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31627,6 +33250,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Rule`
         :rtype: :class:`~oci.response.Response`
 
@@ -31643,6 +33270,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -31711,6 +33339,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31724,6 +33353,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31775,6 +33405,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Schema`
         :rtype: :class:`~oci.response.Response`
 
@@ -31791,6 +33425,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -31842,6 +33477,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31854,6 +33490,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -31913,6 +33550,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestion`
         :rtype: :class:`~oci.response.Response`
 
@@ -31929,6 +33570,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -31997,6 +33639,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SecurityQuestion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32010,6 +33653,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SecurityQuestion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32069,6 +33713,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -32085,6 +33733,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -32153,6 +33802,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SecurityQuestionSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32166,6 +33816,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SecurityQuestionSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32225,6 +33876,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SelfRegistrationProfile`
         :rtype: :class:`~oci.response.Response`
 
@@ -32241,6 +33896,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -32309,6 +33965,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32322,6 +33979,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32381,6 +34039,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Setting`
         :rtype: :class:`~oci.response.Response`
 
@@ -32397,6 +34059,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -32465,6 +34128,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Setting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32478,6 +34142,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="Setting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32537,6 +34202,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SmtpCredential`
         :rtype: :class:`~oci.response.Response`
 
@@ -32553,6 +34222,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -32621,6 +34291,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32634,6 +34305,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32687,6 +34359,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SocialIdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -32703,6 +34379,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -32754,6 +34431,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32766,6 +34444,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32825,6 +34504,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.User`
         :rtype: :class:`~oci.response.Response`
 
@@ -32841,6 +34524,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -32909,6 +34593,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32922,6 +34607,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -32981,6 +34667,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -32997,6 +34687,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -33065,6 +34756,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="UserAttributesSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33078,6 +34770,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('patch_op'),
                 response_type="UserAttributesSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33137,6 +34830,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -33153,6 +34850,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -33221,6 +34919,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('account_recovery_setting'),
                 response_type="AccountRecoverySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33234,6 +34933,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('account_recovery_setting'),
                 response_type="AccountRecoverySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33293,6 +34993,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
         :rtype: :class:`~oci.response.Response`
 
@@ -33309,6 +35013,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -33377,6 +35082,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app'),
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33390,6 +35096,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app'),
                 response_type="App",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33449,6 +35156,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppStatusChanger`
         :rtype: :class:`~oci.response.Response`
 
@@ -33465,6 +35176,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -33533,6 +35245,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_status_changer'),
                 response_type="AppStatusChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33546,6 +35259,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_status_changer'),
                 response_type="AppStatusChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33605,6 +35319,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApprovalWorkflow`
         :rtype: :class:`~oci.response.Response`
 
@@ -33621,6 +35339,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -33689,6 +35408,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow'),
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33702,6 +35422,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('approval_workflow'),
                 response_type="ApprovalWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33761,6 +35482,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthenticationFactorSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -33777,6 +35502,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -33845,6 +35571,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('authentication_factor_setting'),
                 response_type="AuthenticationFactorSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33858,6 +35585,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('authentication_factor_setting'),
                 response_type="AuthenticationFactorSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -33917,6 +35645,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGate`
         :rtype: :class:`~oci.response.Response`
 
@@ -33933,6 +35665,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -34001,6 +35734,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate'),
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34014,6 +35748,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate'),
                 response_type="CloudGate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34073,6 +35808,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateMapping`
         :rtype: :class:`~oci.response.Response`
 
@@ -34089,6 +35828,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -34157,6 +35897,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_mapping'),
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34170,6 +35911,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_mapping'),
                 response_type="CloudGateMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34229,6 +35971,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateServer`
         :rtype: :class:`~oci.response.Response`
 
@@ -34245,6 +35991,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -34313,6 +36060,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_server'),
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34326,6 +36074,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_server'),
                 response_type="CloudGateServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34387,6 +36136,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Condition`
         :rtype: :class:`~oci.response.Response`
 
@@ -34403,6 +36156,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -34471,6 +36225,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('condition'),
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34484,6 +36239,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('condition'),
                 response_type="Condition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34543,6 +36299,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.DynamicResourceGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -34559,6 +36319,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -34627,6 +36388,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('dynamic_resource_group'),
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34640,6 +36402,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('dynamic_resource_group'),
                 response_type="DynamicResourceGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34699,6 +36462,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Group`
         :rtype: :class:`~oci.response.Response`
 
@@ -34715,6 +36482,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -34783,6 +36551,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('group'),
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34796,6 +36565,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('group'),
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34857,6 +36627,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityPropagationTrust`
         :rtype: :class:`~oci.response.Response`
 
@@ -34873,6 +36647,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -34941,6 +36716,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_propagation_trust'),
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -34954,6 +36730,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_propagation_trust'),
                 response_type="IdentityPropagationTrust",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35013,6 +36790,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -35029,6 +36810,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -35097,6 +36879,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_provider'),
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35110,6 +36893,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_provider'),
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35169,6 +36953,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -35185,6 +36973,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -35253,6 +37042,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_setting'),
                 response_type="IdentitySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35266,6 +37056,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_setting'),
                 response_type="IdentitySetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35325,6 +37116,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.KmsiSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -35341,6 +37136,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -35409,6 +37205,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('kmsi_setting'),
                 response_type="KmsiSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35422,6 +37219,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('kmsi_setting'),
                 response_type="KmsiSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35483,6 +37281,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MappedAttribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -35499,6 +37301,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -35567,6 +37370,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('mapped_attribute'),
                 response_type="MappedAttribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35580,6 +37384,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('mapped_attribute'),
                 response_type="MappedAttribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35636,6 +37441,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Me`
         :rtype: :class:`~oci.response.Response`
 
@@ -35652,6 +37461,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -35709,6 +37519,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('me'),
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35721,6 +37532,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('me'),
                 response_type="Me",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35769,6 +37581,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MePasswordChanger`
         :rtype: :class:`~oci.response.Response`
 
@@ -35785,6 +37601,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -35825,6 +37642,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('me_password_changer'),
                 response_type="MePasswordChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35836,6 +37654,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('me_password_changer'),
                 response_type="MePasswordChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35895,6 +37714,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NetworkPerimeter`
         :rtype: :class:`~oci.response.Response`
 
@@ -35911,6 +37734,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -35979,6 +37803,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('network_perimeter'),
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -35992,6 +37817,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('network_perimeter'),
                 response_type="NetworkPerimeter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36051,6 +37877,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NotificationSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -36067,6 +37897,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -36135,6 +37966,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('notification_setting'),
                 response_type="NotificationSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36148,6 +37980,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('notification_setting'),
                 response_type="NotificationSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36207,6 +38040,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.PasswordPolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -36223,6 +38060,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -36291,6 +38129,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('password_policy'),
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36304,6 +38143,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('password_policy'),
                 response_type="PasswordPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36365,6 +38205,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Policy`
         :rtype: :class:`~oci.response.Response`
 
@@ -36381,6 +38225,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -36449,6 +38294,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('policy'),
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36462,6 +38308,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('policy'),
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36523,6 +38370,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Rule`
         :rtype: :class:`~oci.response.Response`
 
@@ -36539,6 +38390,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -36607,6 +38459,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('rule'),
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36620,6 +38473,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('rule'),
                 response_type="Rule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36671,6 +38525,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Schema`
         :rtype: :class:`~oci.response.Response`
 
@@ -36687,6 +38545,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -36738,6 +38597,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('schema'),
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36750,6 +38610,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('schema'),
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36809,6 +38670,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSetting`
         :rtype: :class:`~oci.response.Response`
 
@@ -36825,6 +38690,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -36893,6 +38759,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question_setting'),
                 response_type="SecurityQuestionSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36906,6 +38773,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question_setting'),
                 response_type="SecurityQuestionSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -36965,6 +38833,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SelfRegistrationProfile`
         :rtype: :class:`~oci.response.Response`
 
@@ -36981,6 +38853,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -37049,6 +38922,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('self_registration_profile'),
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37062,6 +38936,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('self_registration_profile'),
                 response_type="SelfRegistrationProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37121,6 +38996,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Setting`
         :rtype: :class:`~oci.response.Response`
 
@@ -37137,6 +39016,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -37205,6 +39085,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('setting'),
                 response_type="Setting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37218,6 +39099,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('setting'),
                 response_type="Setting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37271,6 +39153,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SocialIdentityProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -37287,6 +39173,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -37338,6 +39225,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('social_identity_provider'),
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37350,6 +39238,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('social_identity_provider'),
                 response_type="SocialIdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37409,6 +39298,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.User`
         :rtype: :class:`~oci.response.Response`
 
@@ -37425,6 +39318,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -37493,6 +39387,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user'),
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37506,6 +39401,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user'),
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37557,6 +39453,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserCapabilitiesChanger`
         :rtype: :class:`~oci.response.Response`
 
@@ -37573,6 +39473,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -37624,6 +39525,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_capabilities_changer'),
                 response_type="UserCapabilitiesChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37636,6 +39538,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_capabilities_changer'),
                 response_type="UserCapabilitiesChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37687,6 +39590,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserPasswordChanger`
         :rtype: :class:`~oci.response.Response`
 
@@ -37703,6 +39610,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -37754,6 +39662,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_password_changer'),
                 response_type="UserPasswordChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37766,6 +39675,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_password_changer'),
                 response_type="UserPasswordChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37817,6 +39727,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserPasswordResetter`
         :rtype: :class:`~oci.response.Response`
 
@@ -37833,6 +39747,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -37884,6 +39799,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_password_resetter'),
                 response_type="UserPasswordResetter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37896,6 +39812,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_password_resetter'),
                 response_type="UserPasswordResetter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -37955,6 +39872,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserStatusChanger`
         :rtype: :class:`~oci.response.Response`
 
@@ -37971,6 +39892,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38039,6 +39961,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_status_changer'),
                 response_type="UserStatusChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38052,6 +39975,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_status_changer'),
                 response_type="UserStatusChanger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38091,6 +40015,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountMgmtInfos`
         :rtype: :class:`~oci.response.Response`
 
@@ -38107,6 +40035,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38154,6 +40083,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('account_mgmt_info_search_request'),
                 response_type="AccountMgmtInfos",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38166,6 +40096,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('account_mgmt_info_search_request'),
                 response_type="AccountMgmtInfos",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38205,6 +40136,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ApiKeys`
         :rtype: :class:`~oci.response.Response`
 
@@ -38221,6 +40156,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38268,6 +40204,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('api_key_search_request'),
                 response_type="ApiKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38280,6 +40217,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('api_key_search_request'),
                 response_type="ApiKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38319,6 +40257,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRoles`
         :rtype: :class:`~oci.response.Response`
 
@@ -38335,6 +40277,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38382,6 +40325,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_role_search_request'),
                 response_type="AppRoles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38394,6 +40338,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_role_search_request'),
                 response_type="AppRoles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38433,6 +40378,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Apps`
         :rtype: :class:`~oci.response.Response`
 
@@ -38449,6 +40398,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38496,6 +40446,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_search_request'),
                 response_type="Apps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38508,6 +40459,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('app_search_request'),
                 response_type="Apps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38547,6 +40499,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthTokens`
         :rtype: :class:`~oci.response.Response`
 
@@ -38563,6 +40519,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38610,6 +40567,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('auth_token_search_request'),
                 response_type="AuthTokens",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38622,6 +40580,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('auth_token_search_request'),
                 response_type="AuthTokens",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38661,6 +40620,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AuthenticationFactorSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -38677,6 +40640,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38724,6 +40688,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('authentication_factor_settings_search_request'),
                 response_type="AuthenticationFactorSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38736,6 +40701,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('authentication_factor_settings_search_request'),
                 response_type="AuthenticationFactorSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38775,6 +40741,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateMappings`
         :rtype: :class:`~oci.response.Response`
 
@@ -38791,6 +40761,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38838,6 +40809,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_mapping_search_request'),
                 response_type="CloudGateMappings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38850,6 +40822,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_mapping_search_request'),
                 response_type="CloudGateMappings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38889,6 +40862,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGateServers`
         :rtype: :class:`~oci.response.Response`
 
@@ -38905,6 +40882,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -38952,6 +40930,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_server_search_request'),
                 response_type="CloudGateServers",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -38964,6 +40943,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_server_search_request'),
                 response_type="CloudGateServers",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39003,6 +40983,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CloudGates`
         :rtype: :class:`~oci.response.Response`
 
@@ -39019,6 +41003,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39066,6 +41051,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_search_request'),
                 response_type="CloudGates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39078,6 +41064,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('cloud_gate_search_request'),
                 response_type="CloudGates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39117,6 +41104,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Conditions`
         :rtype: :class:`~oci.response.Response`
 
@@ -39133,6 +41124,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39180,6 +41172,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('condition_search_request'),
                 response_type="Conditions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39192,6 +41185,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('condition_search_request'),
                 response_type="Conditions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39231,6 +41225,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.CustomerSecretKeys`
         :rtype: :class:`~oci.response.Response`
 
@@ -39247,6 +41245,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39294,6 +41293,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('customer_secret_key_search_request'),
                 response_type="CustomerSecretKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39306,6 +41306,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('customer_secret_key_search_request'),
                 response_type="CustomerSecretKeys",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39345,6 +41346,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.DynamicResourceGroups`
         :rtype: :class:`~oci.response.Response`
 
@@ -39361,6 +41366,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39408,6 +41414,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('dynamic_resource_group_search_request'),
                 response_type="DynamicResourceGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39420,6 +41427,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('dynamic_resource_group_search_request'),
                 response_type="DynamicResourceGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39459,6 +41467,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grants`
         :rtype: :class:`~oci.response.Response`
 
@@ -39475,6 +41487,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39522,6 +41535,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('grant_search_request'),
                 response_type="Grants",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39534,6 +41548,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('grant_search_request'),
                 response_type="Grants",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39573,6 +41588,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Groups`
         :rtype: :class:`~oci.response.Response`
 
@@ -39589,6 +41608,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39636,6 +41656,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('group_search_request'),
                 response_type="Groups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39648,6 +41669,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('group_search_request'),
                 response_type="Groups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39687,6 +41709,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProviders`
         :rtype: :class:`~oci.response.Response`
 
@@ -39703,6 +41729,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39750,6 +41777,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_provider_search_request'),
                 response_type="IdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39762,6 +41790,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_provider_search_request'),
                 response_type="IdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39801,6 +41830,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -39817,6 +41850,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39864,6 +41898,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_settings_search_request'),
                 response_type="IdentitySettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39876,6 +41911,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('identity_settings_search_request'),
                 response_type="IdentitySettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39915,6 +41951,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.KmsiSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -39931,6 +41971,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -39978,6 +42019,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('kmsi_settings_search_request'),
                 response_type="KmsiSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -39990,6 +42032,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('kmsi_settings_search_request'),
                 response_type="KmsiSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40029,6 +42072,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MappedAttributes`
         :rtype: :class:`~oci.response.Response`
 
@@ -40045,6 +42092,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40092,6 +42140,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('mapped_attribute_search_request'),
                 response_type="MappedAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40104,6 +42153,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('mapped_attribute_search_request'),
                 response_type="MappedAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40143,6 +42193,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApps`
         :rtype: :class:`~oci.response.Response`
 
@@ -40159,6 +42213,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40206,6 +42261,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_app_search_request'),
                 response_type="MyApps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40218,6 +42274,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_app_search_request'),
                 response_type="MyApps",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40257,6 +42314,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyGroups`
         :rtype: :class:`~oci.response.Response`
 
@@ -40273,6 +42334,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40320,6 +42382,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_group_search_request'),
                 response_type="MyGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40332,6 +42395,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_group_search_request'),
                 response_type="MyGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40371,6 +42435,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequestableGroups`
         :rtype: :class:`~oci.response.Response`
 
@@ -40387,6 +42455,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40434,6 +42503,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_requestable_group_search_request'),
                 response_type="MyRequestableGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40446,6 +42516,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_requestable_group_search_request'),
                 response_type="MyRequestableGroups",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40485,6 +42556,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequests`
         :rtype: :class:`~oci.response.Response`
 
@@ -40501,6 +42576,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40548,6 +42624,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_request_search_request'),
                 response_type="MyRequests",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40560,6 +42637,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('my_request_search_request'),
                 response_type="MyRequests",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40599,6 +42677,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NetworkPerimeters`
         :rtype: :class:`~oci.response.Response`
 
@@ -40615,6 +42697,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40662,6 +42745,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('network_perimeter_search_request'),
                 response_type="NetworkPerimeters",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40674,6 +42758,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('network_perimeter_search_request'),
                 response_type="NetworkPerimeters",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40713,6 +42798,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.NotificationSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -40729,6 +42818,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40776,6 +42866,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('notification_settings_search_request'),
                 response_type="NotificationSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40788,6 +42879,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('notification_settings_search_request'),
                 response_type="NotificationSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40827,6 +42919,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuth2ClientCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -40843,6 +42939,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -40890,6 +42987,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth2_client_credential_search_request'),
                 response_type="OAuth2ClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40902,6 +43000,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth2_client_credential_search_request'),
                 response_type="OAuth2ClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -40941,6 +43040,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthClientCertificates`
         :rtype: :class:`~oci.response.Response`
 
@@ -40957,6 +43060,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41004,6 +43108,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_client_certificate_search_request'),
                 response_type="OAuthClientCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41016,6 +43121,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_client_certificate_search_request'),
                 response_type="OAuthClientCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41055,6 +43161,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OAuthPartnerCertificates`
         :rtype: :class:`~oci.response.Response`
 
@@ -41071,6 +43181,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41118,6 +43229,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_partner_certificate_search_request'),
                 response_type="OAuthPartnerCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41130,6 +43242,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('o_auth_partner_certificate_search_request'),
                 response_type="OAuthPartnerCertificates",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41169,6 +43282,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.OciConsoleSignOnPolicyConsents`
         :rtype: :class:`~oci.response.Response`
 
@@ -41185,6 +43302,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41232,6 +43350,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('oci_console_sign_on_policy_consent_search_request'),
                 response_type="OciConsoleSignOnPolicyConsents",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41244,6 +43363,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('oci_console_sign_on_policy_consent_search_request'),
                 response_type="OciConsoleSignOnPolicyConsents",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41283,6 +43403,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.PasswordPolicies`
         :rtype: :class:`~oci.response.Response`
 
@@ -41299,6 +43423,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41346,6 +43471,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('password_policy_search_request'),
                 response_type="PasswordPolicies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41358,6 +43484,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('password_policy_search_request'),
                 response_type="PasswordPolicies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41397,6 +43524,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Policies`
         :rtype: :class:`~oci.response.Response`
 
@@ -41413,6 +43544,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41460,6 +43592,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('policy_search_request'),
                 response_type="Policies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41472,6 +43605,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('policy_search_request'),
                 response_type="Policies",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41511,6 +43645,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ResourceTypeSchemaAttributes`
         :rtype: :class:`~oci.response.Response`
 
@@ -41527,6 +43665,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41574,6 +43713,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('resource_type_schema_attribute_search_request'),
                 response_type="ResourceTypeSchemaAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41586,6 +43726,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('resource_type_schema_attribute_search_request'),
                 response_type="ResourceTypeSchemaAttributes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41625,6 +43766,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Rules`
         :rtype: :class:`~oci.response.Response`
 
@@ -41641,6 +43786,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41688,6 +43834,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('rule_search_request'),
                 response_type="Rules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41700,6 +43847,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('rule_search_request'),
                 response_type="Rules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41739,6 +43887,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Schemas`
         :rtype: :class:`~oci.response.Response`
 
@@ -41755,6 +43907,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41802,6 +43955,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('schema_search_request'),
                 response_type="Schemas",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41814,6 +43968,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('schema_search_request'),
                 response_type="Schemas",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41853,6 +44008,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -41869,6 +44028,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -41916,6 +44076,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question_settings_search_request'),
                 response_type="SecurityQuestionSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41928,6 +44089,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question_settings_search_request'),
                 response_type="SecurityQuestionSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -41967,6 +44129,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestions`
         :rtype: :class:`~oci.response.Response`
 
@@ -41983,6 +44149,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42030,6 +44197,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question_search_request'),
                 response_type="SecurityQuestions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42042,6 +44210,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('security_question_search_request'),
                 response_type="SecurityQuestions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42081,6 +44250,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SelfRegistrationProfiles`
         :rtype: :class:`~oci.response.Response`
 
@@ -42097,6 +44270,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42144,6 +44318,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('self_registration_profile_search_request'),
                 response_type="SelfRegistrationProfiles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42156,6 +44331,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('self_registration_profile_search_request'),
                 response_type="SelfRegistrationProfiles",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42195,6 +44371,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Settings`
         :rtype: :class:`~oci.response.Response`
 
@@ -42211,6 +44391,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42258,6 +44439,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('settings_search_request'),
                 response_type="Settings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42270,6 +44452,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('settings_search_request'),
                 response_type="Settings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42309,6 +44492,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SmtpCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -42325,6 +44512,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42372,6 +44560,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('smtp_credential_search_request'),
                 response_type="SmtpCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42384,6 +44573,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('smtp_credential_search_request'),
                 response_type="SmtpCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42423,6 +44613,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SocialIdentityProviders`
         :rtype: :class:`~oci.response.Response`
 
@@ -42439,6 +44633,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42486,6 +44681,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('social_identity_provider_search_request'),
                 response_type="SocialIdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42498,6 +44694,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('social_identity_provider_search_request'),
                 response_type="SocialIdentityProviders",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42537,6 +44734,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSettings`
         :rtype: :class:`~oci.response.Response`
 
@@ -42553,6 +44754,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42600,6 +44802,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_attributes_settings_search_request'),
                 response_type="UserAttributesSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42612,6 +44815,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_attributes_settings_search_request'),
                 response_type="UserAttributesSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42651,6 +44855,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserDbCredentials`
         :rtype: :class:`~oci.response.Response`
 
@@ -42667,6 +44875,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42714,6 +44923,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_db_credentials_search_request'),
                 response_type="UserDbCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42726,6 +44936,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_db_credentials_search_request'),
                 response_type="UserDbCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42765,6 +44976,10 @@ class IdentityDomainsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Users`
         :rtype: :class:`~oci.response.Response`
 
@@ -42781,6 +44996,7 @@ class IdentityDomainsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "authorization",
             "resource_type_schema_version",
@@ -42828,6 +45044,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_search_request'),
                 response_type="Users",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -42840,6 +45057,7 @@ class IdentityDomainsClient(object):
                 body=kwargs.get('user_search_request'),
                 response_type="Users",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
