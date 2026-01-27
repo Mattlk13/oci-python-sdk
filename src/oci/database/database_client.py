@@ -45066,6 +45066,9 @@ class DatabaseClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
+        :param bool is_online_restart: (optional)
+            If provided, an online restart will be triggered.
+
         :param bool opc_dry_run: (optional)
             Indicates that the request is a dry run, if set to \"true\". A dry run request does not actually
             creating or updating a resource and is used only to perform validation on the submitted data.
@@ -45105,6 +45108,7 @@ class DatabaseClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
+            "is_online_restart",
             "opc_dry_run"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -45121,6 +45125,11 @@ class DatabaseClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isOnlineRestart": kwargs.get("is_online_restart", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -45144,6 +45153,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -45156,6 +45166,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),

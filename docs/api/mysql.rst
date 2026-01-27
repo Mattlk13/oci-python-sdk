@@ -45,6 +45,7 @@ Mysql
     oci.mysql.models.ChannelSummary
     oci.mysql.models.ChannelTarget
     oci.mysql.models.ChannelTargetDbSystem
+    oci.mysql.models.CompressionOptions
     oci.mysql.models.Configuration
     oci.mysql.models.ConfigurationSummary
     oci.mysql.models.ConfigurationVariables
@@ -88,6 +89,8 @@ Mysql
     oci.mysql.models.DeletionPolicyDetails
     oci.mysql.models.EncryptDataDetails
     oci.mysql.models.ErrorOnAnonymousHandling
+    oci.mysql.models.ExportBackupDetails
+    oci.mysql.models.ExportOptions
     oci.mysql.models.HeatWaveCluster
     oci.mysql.models.HeatWaveClusterMemoryEstimate
     oci.mysql.models.HeatWaveClusterSchemaMemoryEstimate

@@ -10,26 +10,26 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class UpdateComputeHostDetails(object):
+class UpdateComputeHostsDetails(object):
     """
     The details for updating the compute host.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateComputeHostDetails object with values from keyword arguments.
+        Initializes a new UpdateComputeHostsDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this UpdateComputeHostDetails.
+            The value to assign to the defined_tags property of this UpdateComputeHostsDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         :param display_name:
-            The value to assign to the display_name property of this UpdateComputeHostDetails.
+            The value to assign to the display_name property of this UpdateComputeHostsDetails.
         :type display_name: str
 
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this UpdateComputeHostDetails.
+            The value to assign to the freeform_tags property of this UpdateComputeHostsDetails.
         :type freeform_tags: dict(str, str)
 
         """
@@ -50,7 +50,7 @@ class UpdateComputeHostDetails(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this UpdateComputeHostDetails.
+        Gets the defined_tags of this UpdateComputeHostsDetails.
         Defined tags for this resource. Each key is predefined and scoped to a
         namespace. For more information, see `Resource Tags`__.
 
@@ -59,7 +59,7 @@ class UpdateComputeHostDetails(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The defined_tags of this UpdateComputeHostDetails.
+        :return: The defined_tags of this UpdateComputeHostsDetails.
         :rtype: dict(str, dict(str, object))
         """
         return self._defined_tags
@@ -67,7 +67,7 @@ class UpdateComputeHostDetails(object):
     @defined_tags.setter
     def defined_tags(self, defined_tags):
         """
-        Sets the defined_tags of this UpdateComputeHostDetails.
+        Sets the defined_tags of this UpdateComputeHostsDetails.
         Defined tags for this resource. Each key is predefined and scoped to a
         namespace. For more information, see `Resource Tags`__.
 
@@ -76,7 +76,7 @@ class UpdateComputeHostDetails(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :param defined_tags: The defined_tags of this UpdateComputeHostDetails.
+        :param defined_tags: The defined_tags of this UpdateComputeHostsDetails.
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
@@ -84,12 +84,12 @@ class UpdateComputeHostDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this UpdateComputeHostDetails.
+        Gets the display_name of this UpdateComputeHostsDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
-        :return: The display_name of this UpdateComputeHostDetails.
+        :return: The display_name of this UpdateComputeHostsDetails.
         :rtype: str
         """
         return self._display_name
@@ -97,12 +97,12 @@ class UpdateComputeHostDetails(object):
     @display_name.setter
     def display_name(self, display_name):
         """
-        Sets the display_name of this UpdateComputeHostDetails.
+        Sets the display_name of this UpdateComputeHostsDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
-        :param display_name: The display_name of this UpdateComputeHostDetails.
+        :param display_name: The display_name of this UpdateComputeHostsDetails.
         :type: str
         """
         self._display_name = display_name
@@ -110,7 +110,7 @@ class UpdateComputeHostDetails(object):
     @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this UpdateComputeHostDetails.
+        Gets the freeform_tags of this UpdateComputeHostsDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
         predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
@@ -119,7 +119,7 @@ class UpdateComputeHostDetails(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The freeform_tags of this UpdateComputeHostDetails.
+        :return: The freeform_tags of this UpdateComputeHostsDetails.
         :rtype: dict(str, str)
         """
         return self._freeform_tags
@@ -127,7 +127,7 @@ class UpdateComputeHostDetails(object):
     @freeform_tags.setter
     def freeform_tags(self, freeform_tags):
         """
-        Sets the freeform_tags of this UpdateComputeHostDetails.
+        Sets the freeform_tags of this UpdateComputeHostsDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
         predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
@@ -136,7 +136,7 @@ class UpdateComputeHostDetails(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :param freeform_tags: The freeform_tags of this UpdateComputeHostDetails.
+        :param freeform_tags: The freeform_tags of this UpdateComputeHostsDetails.
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags

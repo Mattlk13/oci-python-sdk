@@ -171,7 +171,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs"
         method = "POST"
         operation_name = "create_occ_availability_catalog"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -277,7 +277,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCapacityRequests"
         method = "POST"
         operation_name = "create_occ_capacity_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/CreateOccCapacityRequest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequest/CreateOccCapacityRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -386,7 +386,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups/{occCustomerGroupId}/occCustomers"
         method = "POST"
         operation_name = "create_occ_customer"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/CreateOccCustomer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomer/CreateOccCustomer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -504,7 +504,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups"
         method = "POST"
         operation_name = "create_occ_customer_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/CreateOccCustomerGroup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomerGroup/CreateOccCustomerGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -610,7 +610,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs/{occAvailabilityCatalogId}"
         method = "DELETE"
         operation_name = "delete_occ_availability_catalog"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -723,7 +723,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCapacityRequests/{occCapacityRequestId}"
         method = "DELETE"
         operation_name = "delete_occ_capacity_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/DeleteOccCapacityRequest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequest/DeleteOccCapacityRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -839,7 +839,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups/{occCustomerGroupId}/occCustomers/{occCustomerId}"
         method = "DELETE"
         operation_name = "delete_occ_customer"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/DeleteOccCustomer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomer/DeleteOccCustomer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -953,7 +953,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups/{occCustomerGroupId}"
         method = "DELETE"
         operation_name = "delete_occ_customer_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/DeleteOccCustomerGroup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomerGroup/DeleteOccCustomerGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1059,7 +1059,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs/{occAvailabilityCatalogId}"
         method = "GET"
         operation_name = "get_occ_availability_catalog"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1179,7 +1179,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs/{occAvailabilityCatalogId}/content"
         method = "GET"
         operation_name = "get_occ_availability_catalog_content"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1290,7 +1290,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCapacityRequests/{occCapacityRequestId}"
         method = "GET"
         operation_name = "get_occ_capacity_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/GetOccCapacityRequest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequest/GetOccCapacityRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1396,7 +1396,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups/{occCustomerGroupId}"
         method = "GET"
         operation_name = "get_occ_customer_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/GetOccCustomerGroup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomerGroup/GetOccCustomerGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1535,7 +1535,7 @@ class CapacityManagementClient(object):
         resource_path = "/internal/namespace/{namespace}/occOverview"
         method = "GET"
         operation_name = "list_internal_namespace_occ_overviews"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1697,7 +1697,7 @@ class CapacityManagementClient(object):
         resource_path = "/internal/occHandoverResourceBlockDetails"
         method = "GET"
         operation_name = "list_internal_occ_handover_resource_block_details"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListInternalOccHandoverResourceBlockDetails"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccHandoverResourceBlockDetailCollection/ListInternalOccHandoverResourceBlockDetails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1859,7 +1859,7 @@ class CapacityManagementClient(object):
         resource_path = "/internal/occHandoverResourceBlocks"
         method = "GET"
         operation_name = "list_internal_occ_handover_resource_blocks"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListInternalOccHandoverResourceBlocks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccHandoverResourceBlockCollection/ListInternalOccHandoverResourceBlocks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2026,7 +2026,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs/{occAvailabilityCatalogId}/occAvailabilities"
         method = "GET"
         operation_name = "list_occ_availabilities"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCollection/ListOccAvailabilities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCollection/ListOccAvailabilities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2200,7 +2200,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs"
         method = "GET"
         operation_name = "list_occ_availability_catalogs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2380,7 +2380,7 @@ class CapacityManagementClient(object):
         resource_path = "/internal/occAvailabilityCatalogs"
         method = "GET"
         operation_name = "list_occ_availability_catalogs_internal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2561,7 +2561,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCapacityRequests"
         method = "GET"
         operation_name = "list_occ_capacity_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2746,7 +2746,7 @@ class CapacityManagementClient(object):
         resource_path = "/internal/occCapacityRequests"
         method = "GET"
         operation_name = "list_occ_capacity_requests_internal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2921,7 +2921,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups"
         method = "GET"
         operation_name = "list_occ_customer_groups"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3077,7 +3077,7 @@ class CapacityManagementClient(object):
         resource_path = "/occHandoverResourceBlockDetails"
         method = "GET"
         operation_name = "list_occ_handover_resource_block_details"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListOccHandoverResourceBlockDetails"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccHandoverResourceBlockDetailCollection/ListOccHandoverResourceBlockDetails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3236,7 +3236,7 @@ class CapacityManagementClient(object):
         resource_path = "/occHandoverResourceBlocks"
         method = "GET"
         operation_name = "list_occ_handover_resource_blocks"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListOccHandoverResourceBlocks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccHandoverResourceBlockCollection/ListOccHandoverResourceBlocks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3407,7 +3407,7 @@ class CapacityManagementClient(object):
         resource_path = "/namespace/{namespace}/occOverview"
         method = "GET"
         operation_name = "list_occ_overviews"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListOccOverviews"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccOverviewCollection/ListOccOverviews"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3558,7 +3558,7 @@ class CapacityManagementClient(object):
         resource_path = "/internal/occCapacityRequests/{occCapacityRequestId}"
         method = "PATCH"
         operation_name = "patch_internal_occ_capacity_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3678,7 +3678,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCapacityRequests/{occCapacityRequestId}"
         method = "PATCH"
         operation_name = "patch_occ_capacity_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchOccCapacityRequest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequest/PatchOccCapacityRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3802,7 +3802,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs/{occAvailabilityCatalogId}/actions/publish"
         method = "POST"
         operation_name = "publish_occ_availability_catalog"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3921,7 +3921,7 @@ class CapacityManagementClient(object):
         resource_path = "/internal/occCapacityRequests/{occCapacityRequestId}"
         method = "PUT"
         operation_name = "update_internal_occ_capacity_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4041,7 +4041,7 @@ class CapacityManagementClient(object):
         resource_path = "/occAvailabilityCatalogs/{occAvailabilityCatalogId}"
         method = "PUT"
         operation_name = "update_occ_availability_catalog"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4161,7 +4161,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCapacityRequests/{occCapacityRequestId}"
         method = "PUT"
         operation_name = "update_occ_capacity_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateOccCapacityRequest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCapacityRequest/UpdateOccCapacityRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4284,7 +4284,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups/{occCustomerGroupId}/occCustomers/{occCustomerId}"
         method = "PUT"
         operation_name = "update_occ_customer"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/UpdateOccCustomer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomer/UpdateOccCustomer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4405,7 +4405,7 @@ class CapacityManagementClient(object):
         resource_path = "/occCustomerGroups/{occCustomerGroupId}"
         method = "PUT"
         operation_name = "update_occ_customer_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/UpdateOccCustomerGroup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccCustomerGroup/UpdateOccCustomerGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

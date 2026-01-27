@@ -590,8 +590,8 @@ Core Services
     oci.core.models.UpdateComputeClusterDetails
     oci.core.models.UpdateComputeGpuMemoryClusterDetails
     oci.core.models.UpdateComputeGpuMemoryFabricDetails
-    oci.core.models.UpdateComputeHostDetails
     oci.core.models.UpdateComputeHostGroupDetails
+    oci.core.models.UpdateComputeHostsDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails

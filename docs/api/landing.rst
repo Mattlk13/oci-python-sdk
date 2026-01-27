@@ -161,6 +161,7 @@ API Reference
 * :doc:`Managed My Sql Databases <database_management/client/oci.database_management.ManagedMySqlDatabasesClient>`
 * :doc:`Management <oda/client/oci.oda.ManagementClient>`
 * :doc:`Management Agent <management_agent/client/oci.management_agent.ManagementAgentClient>`
+* :doc:`Management Appliance <ocvp/client/oci.ocvp.ManagementApplianceClient>`
 * :doc:`Management Station <os_management_hub/client/oci.os_management_hub.ManagementStationClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Marketplace Publisher <marketplace_publisher/client/oci.marketplace_publisher.MarketplacePublisherClient>`

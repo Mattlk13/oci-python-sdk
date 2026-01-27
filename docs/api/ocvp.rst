@@ -10,12 +10,14 @@ Ocvp
     oci.ocvp.DatastoreClient
     oci.ocvp.DatastoreClusterClient
     oci.ocvp.EsxiHostClient
+    oci.ocvp.ManagementApplianceClient
     oci.ocvp.SddcClient
     oci.ocvp.WorkRequestClient
     oci.ocvp.ClusterClientCompositeOperations
     oci.ocvp.DatastoreClientCompositeOperations
     oci.ocvp.DatastoreClusterClientCompositeOperations
     oci.ocvp.EsxiHostClientCompositeOperations
+    oci.ocvp.ManagementApplianceClientCompositeOperations
     oci.ocvp.SddcClientCompositeOperations
     oci.ocvp.WorkRequestClientCompositeOperations
 
@@ -44,6 +46,7 @@ Ocvp
     oci.ocvp.models.CreateDatastoreClusterDetails
     oci.ocvp.models.CreateDatastoreDetails
     oci.ocvp.models.CreateEsxiHostDetails
+    oci.ocvp.models.CreateManagementApplianceDetails
     oci.ocvp.models.CreateSddcDetails
     oci.ocvp.models.Datastore
     oci.ocvp.models.DatastoreAttachment
@@ -62,6 +65,12 @@ Ocvp
     oci.ocvp.models.HcxLicenseSummary
     oci.ocvp.models.InitialClusterConfiguration
     oci.ocvp.models.InitialConfiguration
+    oci.ocvp.models.ManagementAppliance
+    oci.ocvp.models.ManagementApplianceCollection
+    oci.ocvp.models.ManagementApplianceConfiguration
+    oci.ocvp.models.ManagementApplianceConnection
+    oci.ocvp.models.ManagementApplianceConnectionStatus
+    oci.ocvp.models.ManagementApplianceSummary
     oci.ocvp.models.NetworkConfiguration
     oci.ocvp.models.RemoveDatastoreFromDatastoreClusterDetails
     oci.ocvp.models.ReplaceHostDetails
@@ -80,6 +89,7 @@ Ocvp
     oci.ocvp.models.UpdateDatastoreClusterDetails
     oci.ocvp.models.UpdateDatastoreDetails
     oci.ocvp.models.UpdateEsxiHostDetails
+    oci.ocvp.models.UpdateManagementApplianceDetails
     oci.ocvp.models.UpdateSddcDetails
     oci.ocvp.models.VsphereLicense
     oci.ocvp.models.VsphereUpgradeObject

@@ -1941,6 +1941,13 @@ class ComputeManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str opc_compute_cluster_id: (optional)
+            The `OCID`__ of the
+            `compute cluster`__ that the instance will be created in.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1975,7 +1982,8 @@ class ComputeManagementClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_compute_cluster_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1995,7 +2003,8 @@ class ComputeManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-compute-cluster-id": kwargs.get("opc_compute_cluster_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

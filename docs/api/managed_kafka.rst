@@ -34,6 +34,8 @@ Managed Kafka
     oci.managed_kafka.models.KafkaClusterConfigVersionCollection
     oci.managed_kafka.models.KafkaClusterConfigVersionSummary
     oci.managed_kafka.models.KafkaClusterSummary
+    oci.managed_kafka.models.NodeShapeCollection
+    oci.managed_kafka.models.NodeShapeSummary
     oci.managed_kafka.models.SubnetSet
     oci.managed_kafka.models.UpdateKafkaClusterConfigDetails
     oci.managed_kafka.models.UpdateKafkaClusterDetails
