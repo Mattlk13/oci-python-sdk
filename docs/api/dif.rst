@@ -23,8 +23,10 @@ Dif
     oci.dif.models.AdbUpdateDetail
     oci.dif.models.AddServiceDetails
     oci.dif.models.AdditionalDetails
+    oci.dif.models.AiDataPlatformDetail
     oci.dif.models.AssignedConnectionDetails
     oci.dif.models.ChangeStackCompartmentDetails
+    oci.dif.models.ComponentValueOverride
     oci.dif.models.CreateStackDetails
     oci.dif.models.DataflowArtifactsDetail
     oci.dif.models.DataflowConnectionDetails
@@ -47,6 +49,12 @@ Dif
     oci.dif.models.GgcsUserDetail
     oci.dif.models.ObjectStorageDetail
     oci.dif.models.ObjectStorageUpdateDetail
+    oci.dif.models.OkeArtifactsDetail
+    oci.dif.models.OkeDetail
+    oci.dif.models.OmkArtifactsDetail
+    oci.dif.models.OmkDetail
+    oci.dif.models.SecretData
+    oci.dif.models.SecretDetail
     oci.dif.models.ServiceDetailResponse
     oci.dif.models.ShapeConfig
     oci.dif.models.Stack

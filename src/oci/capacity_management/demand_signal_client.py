@@ -171,7 +171,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalItems/actions/bulkCreateDemandSignalItems"
         method = "POST"
         operation_name = "bulk_create_occm_demand_signal_item"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalItem/BulkCreateOccmDemandSignalItem"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalItem/BulkCreateOccmDemandSignalItem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -275,7 +275,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignals"
         method = "POST"
         operation_name = "create_occm_demand_signal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignal/CreateOccmDemandSignal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignal/CreateOccmDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -381,7 +381,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalItems"
         method = "POST"
         operation_name = "create_occm_demand_signal_item"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalItem/CreateOccmDemandSignalItem"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalItem/CreateOccmDemandSignalItem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -487,7 +487,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignals/{occmDemandSignalId}"
         method = "DELETE"
         operation_name = "delete_occm_demand_signal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignal/DeleteOccmDemandSignal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignal/DeleteOccmDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -600,7 +600,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalItems/{occmDemandSignalItemId}"
         method = "DELETE"
         operation_name = "delete_occm_demand_signal_item"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalItem/DeleteOccmDemandSignalItem"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalItem/DeleteOccmDemandSignalItem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -706,7 +706,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignals/{occmDemandSignalId}"
         method = "GET"
         operation_name = "get_occm_demand_signal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignal/GetOccmDemandSignal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignal/GetOccmDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -812,7 +812,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalItems/{occmDemandSignalItemId}"
         method = "GET"
         operation_name = "get_occm_demand_signal_item"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalItem/GetOccmDemandSignalItem"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalItem/GetOccmDemandSignalItem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -942,7 +942,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalCatalogResources"
         method = "GET"
         operation_name = "list_occm_demand_signal_catalog_resources"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalCatalogResource/ListOccmDemandSignalCatalogResources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalCatalogResource/ListOccmDemandSignalCatalogResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1098,7 +1098,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalDeliveries"
         method = "GET"
         operation_name = "list_occm_demand_signal_deliveries"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalDeliveryCollection/ListOccmDemandSignalDeliveries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalDeliveryCollection/ListOccmDemandSignalDeliveries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1252,7 +1252,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalItems"
         method = "GET"
         operation_name = "list_occm_demand_signal_items"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalItem/ListOccmDemandSignalItems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalItem/ListOccmDemandSignalItems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1413,7 +1413,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignals"
         method = "GET"
         operation_name = "list_occm_demand_signals"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignal/ListOccmDemandSignals"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignal/ListOccmDemandSignals"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1552,7 +1552,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignals/{occmDemandSignalId}"
         method = "PUT"
         operation_name = "update_occm_demand_signal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignal/UpdateOccmDemandSignal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignal/UpdateOccmDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1672,7 +1672,7 @@ class DemandSignalClient(object):
         resource_path = "/occmDemandSignalItems/{occmDemandSignalItemId}"
         method = "PUT"
         operation_name = "update_occm_demand_signal_item"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalItem/UpdateOccmDemandSignalItem"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalItem/UpdateOccmDemandSignalItem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

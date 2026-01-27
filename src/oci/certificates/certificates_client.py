@@ -126,7 +126,7 @@ class CertificatesClient(object):
 
     def get_ca_bundle(self, ca_bundle_id, **kwargs):
         """
-        Gets a ca-bundle bundle.
+        Gets the bundle for the specified CA bundle.
 
 
         :param str ca_bundle_id: (required)
@@ -230,8 +230,8 @@ class CertificatesClient(object):
 
     def get_certificate_authority_bundle(self, certificate_authority_id, **kwargs):
         """
-        Gets a certificate authority bundle that matches either the specified `stage`, `name`, or `versionNumber` parameter.
-        If none of these parameters are provided, the bundle for the certificate authority version marked as `CURRENT` will be returned.
+        Gets a bundle for a certificate authority (CA) that matches either the specified `stage`, `name`, or `versionNumber` parameter.
+        If none of these parameters are provided, the bundle for the CA version marked as `CURRENT` is returned.
 
 
         :param str certificate_authority_id: (required)
@@ -250,7 +250,7 @@ class CertificatesClient(object):
         :param str stage: (optional)
             The rotation state of the certificate version.
 
-            Allowed values are: "CURRENT", "PENDING", "LATEST", "PREVIOUS", "DEPRECATED"
+            Allowed values are: "CURRENT", "PENDING", "PENDING_ACTIVATION", "LATEST", "PREVIOUS", "DEPRECATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -307,7 +307,7 @@ class CertificatesClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'stage' in kwargs:
-            stage_allowed_values = ["CURRENT", "PENDING", "LATEST", "PREVIOUS", "DEPRECATED"]
+            stage_allowed_values = ["CURRENT", "PENDING", "PENDING_ACTIVATION", "LATEST", "PREVIOUS", "DEPRECATED"]
             if kwargs['stage'] not in stage_allowed_values:
                 raise ValueError(
                     f"Invalid value for `stage`, must be one of { stage_allowed_values }"
@@ -366,10 +366,10 @@ class CertificatesClient(object):
     def get_certificate_bundle(self, certificate_id, **kwargs):
         """
         Gets a certificate bundle that matches either the specified `stage`, `versionName`, or `versionNumber` parameter.
-        If none of these parameters are provided, the bundle for the certificate version marked as `CURRENT` will be returned.
+        If none of these parameters are provided, the bundle for the certificate version marked as `CURRENT` is returned.
 
-        By default, the private key is not included in the query result, and a CertificateBundlePublicOnly is returned.
-        If the private key is needed, use the CertificateBundleTypeQueryParam parameter to get a CertificateBundleWithPrivateKey response.
+        By default, the private key is not included in the query result, and only the certificate bundle is returned.
+        If you also need the private key, you can use the parameter `CertificateBundleTypeQueryParam` to indicate that you want a certificate bundle along with its private key as a response to your request.
 
 
         :param str certificate_id: (required)
@@ -517,7 +517,7 @@ class CertificatesClient(object):
 
     def list_certificate_authority_bundle_versions(self, certificate_authority_id, **kwargs):
         """
-        Lists all certificate authority bundle versions for the specified certificate authority.
+        Lists all versions of bundles for a given certificate authority (CA).
 
 
         :param str certificate_authority_id: (required)

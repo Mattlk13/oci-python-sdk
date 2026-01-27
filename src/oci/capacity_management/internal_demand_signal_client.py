@@ -173,7 +173,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalDeliveries"
         method = "POST"
         operation_name = "create_internal_occm_demand_signal_delivery"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignalDelivery/CreateInternalOccmDemandSignalDelivery"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignalDelivery/CreateInternalOccmDemandSignalDelivery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -279,7 +279,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalDeliveries/{occmDemandSignalDeliveryId}"
         method = "DELETE"
         operation_name = "delete_internal_occm_demand_signal_delivery"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignalDelivery/DeleteInternalOccmDemandSignalDelivery"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignalDelivery/DeleteInternalOccmDemandSignalDelivery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -385,7 +385,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignals/{occmDemandSignalId}"
         method = "GET"
         operation_name = "get_internal_occm_demand_signal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignal/GetInternalOccmDemandSignal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignal/GetInternalOccmDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalCatalog/{occmDemandSignalCatalogId}"
         method = "GET"
         operation_name = "get_internal_occm_demand_signal_catalog"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalCatalogResource/GetInternalOccmDemandSignalCatalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalCatalogResource/GetInternalOccmDemandSignalCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -597,7 +597,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalDeliveries/{occmDemandSignalDeliveryId}"
         method = "GET"
         operation_name = "get_internal_occm_demand_signal_delivery"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignalDelivery/GetInternalOccmDemandSignalDelivery"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignalDelivery/GetInternalOccmDemandSignalDelivery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -733,7 +733,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalCatalogResources"
         method = "GET"
         operation_name = "list_internal_occm_demand_signal_catalog_resources"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignalCatalogResource/ListInternalOccmDemandSignalCatalogResources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignalCatalogResource/ListInternalOccmDemandSignalCatalogResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -891,7 +891,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalCatalog"
         method = "GET"
         operation_name = "list_internal_occm_demand_signal_catalogs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccmDemandSignalCatalog/ListInternalOccmDemandSignalCatalogs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/OccmDemandSignalCatalog/ListInternalOccmDemandSignalCatalogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1042,7 +1042,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalDeliveries"
         method = "GET"
         operation_name = "list_internal_occm_demand_signal_deliveries"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignalDelivery/ListInternalOccmDemandSignalDeliveries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignalDelivery/ListInternalOccmDemandSignalDeliveries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1200,7 +1200,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalItems"
         method = "GET"
         operation_name = "list_internal_occm_demand_signal_items"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignalItemCollection/ListInternalOccmDemandSignalItems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignalItemCollection/ListInternalOccmDemandSignalItems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1365,7 +1365,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignals"
         method = "GET"
         operation_name = "list_internal_occm_demand_signals"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignal/ListInternalOccmDemandSignals"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignal/ListInternalOccmDemandSignals"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1505,7 +1505,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignals/{occmDemandSignalId}"
         method = "PUT"
         operation_name = "update_internal_occm_demand_signal"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignal/UpdateInternalOccmDemandSignal"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignal/UpdateInternalOccmDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1625,7 +1625,7 @@ class InternalDemandSignalClient(object):
         resource_path = "/internal/occmDemandSignalDeliveries/{occmDemandSignalDeliveryId}"
         method = "PUT"
         operation_name = "update_internal_occm_demand_signal_delivery"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/InternalOccmDemandSignalDelivery/UpdateInternalOccmDemandSignalDelivery"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occm/20231107/InternalOccmDemandSignalDelivery/UpdateInternalOccmDemandSignalDelivery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

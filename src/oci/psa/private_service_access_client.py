@@ -174,7 +174,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/psaWorkRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_psa_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/WorkRequest/CancelPsaWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -303,7 +303,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/privateServiceAccess/{privateServiceAccessId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_private_service_access_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/PrivateServiceAccess/ChangePrivateServiceAccessCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -424,7 +424,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/privateServiceAccess"
         method = "POST"
         operation_name = "create_private_service_access"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/PrivateServiceAccess/CreatePrivateServiceAccess"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -533,7 +533,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/privateServiceAccess/{privateServiceAccessId}"
         method = "DELETE"
         operation_name = "delete_private_service_access"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/PrivateServiceAccess/DeletePrivateServiceAccess"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -643,7 +643,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/privateServiceAccess/{privateServiceAccessId}"
         method = "GET"
         operation_name = "get_private_service_access"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/PrivateServiceAccess/GetPrivateServiceAccess"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -753,7 +753,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/psaWorkRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_psa_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/WorkRequest/GetPsaWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -913,7 +913,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/privateServiceAccess"
         method = "GET"
         operation_name = "list_private_service_accesses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/PrivateServiceAccessCollection/ListPrivateServiceAccesses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1083,7 +1083,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/psaServices"
         method = "GET"
         operation_name = "list_psa_services"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/PsaServiceCollection/ListPsaServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1237,7 +1237,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/psaWorkRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_psa_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/WorkRequestError/ListPsaWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1399,7 +1399,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/psaWorkRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_psa_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/WorkRequestLogEntry/ListPsaWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1576,7 +1576,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/psaWorkRequests"
         method = "GET"
         operation_name = "list_psa_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/WorkRequest/ListPsaWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1726,7 +1726,7 @@ class PrivateServiceAccessClient(object):
         resource_path = "/privateServiceAccess/{privateServiceAccessId}"
         method = "PUT"
         operation_name = "update_private_service_access"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/psasvc/20240301/PrivateServiceAccess/UpdatePrivateServiceAccess"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

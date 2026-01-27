@@ -2410,7 +2410,7 @@ class CertificatesManagementClient(object):
         :param str lifecycle_state: (optional)
             A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
 
-            Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "SCHEDULING_DELETION", "PENDING_DELETION", "CANCELLING_DELETION", "FAILED"
+            Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "SCHEDULING_DELETION", "PENDING_DELETION", "CANCELLING_DELETION", "FAILED", "PENDING_ACTIVATION"
 
         :param str name: (optional)
             A filter that returns only resources that match the specified name.
@@ -2491,7 +2491,7 @@ class CertificatesManagementClient(object):
                 f"list_certificate_authorities got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "SCHEDULING_DELETION", "PENDING_DELETION", "CANCELLING_DELETION", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "SCHEDULING_DELETION", "PENDING_DELETION", "CANCELLING_DELETION", "FAILED", "PENDING_ACTIVATION"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"

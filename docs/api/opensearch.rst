@@ -39,6 +39,7 @@ Opensearch
     oci.opensearch.models.ForcePatchClusterDetails
     oci.opensearch.models.ForcePatchPipelineDetails
     oci.opensearch.models.GetManifestResponse
+    oci.opensearch.models.LoadBalancerConfig
     oci.opensearch.models.MaintenanceDetails
     oci.opensearch.models.MaintenanceNotificationDetails
     oci.opensearch.models.MaintenanceNotificationFailure
