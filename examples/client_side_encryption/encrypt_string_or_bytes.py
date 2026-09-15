@@ -27,6 +27,9 @@ kms_master_key_provider = oci.encryption.KMSMasterKeyProvider(
     kms_master_keys=[kms_master_key]
 )
 
+# This provider is pinned to the configured KMS key, vault, and region.
+# It will not discover a different key from encrypted-blob metadata.
+
 # basic encrypt bytes or string data
 data_to_encrypt = b"Sample data to encrypt"
 encryption_context = {"some_additional_authenticated": "data"}
@@ -50,7 +53,9 @@ for key in encryption_context_keys:
     assert encryption_context[key] == crypto_result_decrypt.get_encryption_context()[key]
 
 
-# You can also decrypt without specifying a specific KMSMasterKey ahead of time
+# This provider uses decrypt-only discovery. It selects the KMS master key
+# described by the encrypted blob only when the blob region matches the
+# provider configuration or is registered with the SDK.
 decryption_only_master_key_provider = oci.encryption.KMSMasterKeyProvider(
     config=config
 )

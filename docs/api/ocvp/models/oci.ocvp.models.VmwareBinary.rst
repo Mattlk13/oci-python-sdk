@@ -1,0 +1,11 @@
+VmwareBinary
+============
+
+.. currentmodule:: oci.ocvp.models
+
+.. autoclass:: VmwareBinary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

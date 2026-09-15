@@ -1,0 +1,11 @@
+DataVerificationObjectStatusSummary
+===================================
+
+.. currentmodule:: oci.database_migration.models
+
+.. autoclass:: DataVerificationObjectStatusSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

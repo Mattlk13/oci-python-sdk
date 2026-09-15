@@ -15,6 +15,7 @@ This section describes SDK-specific behaviors:
 * :doc:`Allow control characters in response </sdk_behaviors/allow_control_chars_response>`
 * :doc:`Dual-stack Endpoints </sdk_behaviors/dual_stack_endpoints>`
 * :doc:`Realm Specific Endpoint Template </sdk_behaviors/realm_specific_endpoint_template>`
+* :doc:`Client-Side Encryption </sdk_behaviors/client_side_encryption>`
 
 .. toctree::
     :hidden:
@@ -31,3 +32,4 @@ This section describes SDK-specific behaviors:
     allow_control_chars_response
     dual_stack_endpoints
     realm_specific_endpoint_template
+    client_side_encryption

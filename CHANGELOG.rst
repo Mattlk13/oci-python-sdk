@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.186.0 - 2026-09-15
+====================
+
+Added 
+----- 
+* Support for higher usage submission limits for metered SaaS listings and legacy subscription endpoints in the Service Enablement Lifecycle Framework service 
+* Support for customer-managed encryption keys for database systems and cross-region backup copies in the PostgreSQL service 
+* Support for listing available VMware binaries and generating download links in the Oracle Cloud VMware Solution service 
+* Support for data verification using database object counts, object statuses, and estimated table row counts in the Database Migration service 
+* Support for settings specific to online logical, offline logical, and online standby Oracle migrations in the Database Migration service  
+
+Breaking 
+-------- 
+* The field `usage_record_id` was removed from the model `CreateSubscriptionUsageRecordDetails` in the Service Enablement Lifecycle Framework service 
+* Client-side decryption using a `KMSMasterKeyProvider` configured with a KMS master key now rejects encrypted payloads whose master key ID, vault ID, or region differs from the configured key. To decrypt data encrypted with different KMS keys, select the appropriate provider or use a `KMSMasterKeyProvider` without a configured master key. 
+* Client-side decryption using a `KMSMasterKeyProvider` without a configured master key now requires the region to be known independently of the encrypted payload through built-in SDK definitions, explicit configuration, registered region metadata, Oracle Alloy configuration, or opted-in Instance Metadata Service (IMDS). A region accepted only through endpoint fallback, such as a dotted domain, the implicit OC1 realm, or `OCI_DEFAULT_REALM`, is rejected. If a region is not yet included in this SDK release, configure or register it before decrypting.  
+
+====================
 2.185.2 - 2026-09-08
 ====================
 
