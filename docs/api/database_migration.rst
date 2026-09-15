@@ -56,6 +56,10 @@ Database Migration
     oci.database_migration.models.ChangeMigrationCompartmentDetails
     oci.database_migration.models.CloneAssessmentDetails
     oci.database_migration.models.CloneMigrationDetails
+    oci.database_migration.models.CloneOracleMigrationSettings
+    oci.database_migration.models.CloneOracleOfflineLogicalMigrationSettings
+    oci.database_migration.models.CloneOracleOnlineLogicalMigrationSettings
+    oci.database_migration.models.CloneOracleOnlineStandbyMigrationSettings
     oci.database_migration.models.CollectTracesData
     oci.database_migration.models.CollectTracesDetails
     oci.database_migration.models.Connection
@@ -95,18 +99,30 @@ Database Migration
     oci.database_migration.models.CreateOracleGgsDeploymentDetails
     oci.database_migration.models.CreateOracleInitialLoadSettings
     oci.database_migration.models.CreateOracleMigrationDetails
+    oci.database_migration.models.CreateOracleMigrationSettings
     oci.database_migration.models.CreateOracleNfsDataTransferMediumDetails
     oci.database_migration.models.CreateOracleObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.CreateOracleOfflineLogicalMigrationSettings
+    oci.database_migration.models.CreateOracleOnlineLogicalMigrationSettings
+    oci.database_migration.models.CreateOracleOnlineStandbyMigrationSettings
     oci.database_migration.models.CreateParameterFileVersionDetails
     oci.database_migration.models.CreateReplicat
     oci.database_migration.models.CreateTargetTypeTablespaceDetails
     oci.database_migration.models.CurlTransferDetails
     oci.database_migration.models.DataPumpParameters
+    oci.database_migration.models.DataVerificationDetail
+    oci.database_migration.models.DataVerificationObjectStatusCollection
+    oci.database_migration.models.DataVerificationObjectStatusSummary
+    oci.database_migration.models.DataVerificationObjectTypeCountCollection
+    oci.database_migration.models.DataVerificationObjectTypeCountSummary
+    oci.database_migration.models.DataVerificationTableRowCountCollection
+    oci.database_migration.models.DataVerificationTableRowCountSummary
     oci.database_migration.models.DatabaseConnectionTypeCollection
     oci.database_migration.models.DatabaseConnectionTypeSummary
     oci.database_migration.models.DatabaseInformation
     oci.database_migration.models.DatabaseTechnologySubType
     oci.database_migration.models.DatabaseTechnologyType
+    oci.database_migration.models.DefaultRunDataVerificationDetails
     oci.database_migration.models.DiagnosticsResult
     oci.database_migration.models.DirectoryObject
     oci.database_migration.models.DownloadSqlDetails
@@ -147,6 +163,9 @@ Database Migration
     oci.database_migration.models.MySqlCloneAssessmentDetails
     oci.database_migration.models.MySqlCloneMigrationDetails
     oci.database_migration.models.MySqlDataTransferMediumDetails
+    oci.database_migration.models.MySqlDataVerificationObjectStatusSummary
+    oci.database_migration.models.MySqlDataVerificationObjectTypeCountSummary
+    oci.database_migration.models.MySqlDataVerificationTableRowCountSummary
     oci.database_migration.models.MySqlDatabaseObject
     oci.database_migration.models.MySqlDatabaseObjectSummary
     oci.database_migration.models.MySqlGgsDeploymentDetails
@@ -173,6 +192,9 @@ Database Migration
     oci.database_migration.models.OracleConnection
     oci.database_migration.models.OracleConnectionSummary
     oci.database_migration.models.OracleDataTransferMediumDetails
+    oci.database_migration.models.OracleDataVerificationObjectStatusSummary
+    oci.database_migration.models.OracleDataVerificationObjectTypeCountSummary
+    oci.database_migration.models.OracleDataVerificationTableRowCountSummary
     oci.database_migration.models.OracleDatabaseObject
     oci.database_migration.models.OracleDatabaseObjectSummary
     oci.database_migration.models.OracleDbLinkDataTransferMediumDetails
@@ -180,9 +202,17 @@ Database Migration
     oci.database_migration.models.OracleInitialLoadSettings
     oci.database_migration.models.OracleMigration
     oci.database_migration.models.OracleMigrationObjectCollection
+    oci.database_migration.models.OracleMigrationSettings
+    oci.database_migration.models.OracleMigrationSettingsSummary
     oci.database_migration.models.OracleMigrationSummary
     oci.database_migration.models.OracleNfsDataTransferMediumDetails
     oci.database_migration.models.OracleObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.OracleOfflineLogicalMigrationSettings
+    oci.database_migration.models.OracleOfflineLogicalMigrationSettingsSummary
+    oci.database_migration.models.OracleOnlineLogicalMigrationSettings
+    oci.database_migration.models.OracleOnlineLogicalMigrationSettingsSummary
+    oci.database_migration.models.OracleOnlineStandbyMigrationSettings
+    oci.database_migration.models.OracleOnlineStandbyMigrationSettingsSummary
     oci.database_migration.models.ParameterFileVersion
     oci.database_migration.models.ParameterFileVersionCollection
     oci.database_migration.models.ParameterFileVersionSummary
@@ -193,6 +223,7 @@ Database Migration
     oci.database_migration.models.Replicat
     oci.database_migration.models.ResultError
     oci.database_migration.models.ResumeJobDetails
+    oci.database_migration.models.RunDataVerificationDetails
     oci.database_migration.models.SourceAssessmentConnection
     oci.database_migration.models.StartMigrationDetails
     oci.database_migration.models.TargetAssessmentConnection
@@ -236,8 +267,12 @@ Database Migration
     oci.database_migration.models.UpdateOracleGgsDeploymentDetails
     oci.database_migration.models.UpdateOracleInitialLoadSettings
     oci.database_migration.models.UpdateOracleMigrationDetails
+    oci.database_migration.models.UpdateOracleMigrationSettings
     oci.database_migration.models.UpdateOracleNfsDataTransferMediumDetails
     oci.database_migration.models.UpdateOracleObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.UpdateOracleOfflineLogicalMigrationSettings
+    oci.database_migration.models.UpdateOracleOnlineLogicalMigrationSettings
+    oci.database_migration.models.UpdateOracleOnlineStandbyMigrationSettings
     oci.database_migration.models.UpdateReplicat
     oci.database_migration.models.UpdateTargetDefaultsAutoCreateTablespaceDetails
     oci.database_migration.models.UpdateTargetDefaultsRemapTablespaceDetails

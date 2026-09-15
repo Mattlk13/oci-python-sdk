@@ -79,6 +79,7 @@ Ocvp
     oci.ocvp.models.EsxiHost
     oci.ocvp.models.EsxiHostCollection
     oci.ocvp.models.EsxiHostSummary
+    oci.ocvp.models.GenerateVmwareBinaryDownloadInfoDetails
     oci.ocvp.models.HcxLicenseSummary
     oci.ocvp.models.HostDistributionReportDetails
     oci.ocvp.models.InitialClusterConfiguration
@@ -113,6 +114,9 @@ Ocvp
     oci.ocvp.models.UpdateEsxiHostDetails
     oci.ocvp.models.UpdateManagementApplianceDetails
     oci.ocvp.models.UpdateSddcDetails
+    oci.ocvp.models.VmwareBinary
+    oci.ocvp.models.VmwareBinaryCollection
+    oci.ocvp.models.VmwareBinaryDownloadInfo
     oci.ocvp.models.VsphereLicense
     oci.ocvp.models.VsphereUpgradeObject
     oci.ocvp.models.WorkRequest
