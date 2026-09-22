@@ -84,6 +84,7 @@ Data Safe
     oci.data_safe.models.ChangeAuditArchiveRetrievalCompartmentDetails
     oci.data_safe.models.ChangeAuditPolicyCompartmentDetails
     oci.data_safe.models.ChangeAuditProfileCompartmentDetails
+    oci.data_safe.models.ChangeCryptoAssessmentCompartmentDetails
     oci.data_safe.models.ChangeDataSafePrivateEndpointCompartmentDetails
     oci.data_safe.models.ChangeDatabaseSecurityConfigCompartmentDetails
     oci.data_safe.models.ChangeDiscoveryJobCompartmentDetails
@@ -166,6 +167,37 @@ Data Safe
     oci.data_safe.models.CreateUnifiedAuditPolicyDetails
     oci.data_safe.models.CreateUserAssessmentDetails
     oci.data_safe.models.Credentials
+    oci.data_safe.models.CryptoAssessment
+    oci.data_safe.models.CryptoAssessmentBackupSetCollection
+    oci.data_safe.models.CryptoAssessmentBackupSetSummary
+    oci.data_safe.models.CryptoAssessmentCbomItemCollection
+    oci.data_safe.models.CryptoAssessmentCbomItemSummary
+    oci.data_safe.models.CryptoAssessmentCertificateCollection
+    oci.data_safe.models.CryptoAssessmentCertificateSummary
+    oci.data_safe.models.CryptoAssessmentCollection
+    oci.data_safe.models.CryptoAssessmentFindingAnalyticsCollection
+    oci.data_safe.models.CryptoAssessmentFindingAnalyticsSummary
+    oci.data_safe.models.CryptoAssessmentFindingCategorySummary
+    oci.data_safe.models.CryptoAssessmentFindingCollection
+    oci.data_safe.models.CryptoAssessmentFindingSummary
+    oci.data_safe.models.CryptoAssessmentFindingSummaryMetrics
+    oci.data_safe.models.CryptoAssessmentFindingTargetCollection
+    oci.data_safe.models.CryptoAssessmentFindingTargetSummary
+    oci.data_safe.models.CryptoAssessmentKeyCollection
+    oci.data_safe.models.CryptoAssessmentKeySummary
+    oci.data_safe.models.CryptoAssessmentSqlnetParameters
+    oci.data_safe.models.CryptoAssessmentSummary
+    oci.data_safe.models.CryptoAssessmentTdeObjectCollection
+    oci.data_safe.models.CryptoAssessmentTdeObjectSummary
+    oci.data_safe.models.CryptoAssessmentWalletCollection
+    oci.data_safe.models.CryptoAssessmentWalletSummary
+    oci.data_safe.models.CryptoNnePosture
+    oci.data_safe.models.CryptoPosture
+    oci.data_safe.models.CryptoSqlnetParameter
+    oci.data_safe.models.CryptoSqlnetParameterSource
+    oci.data_safe.models.CryptoSqlnetParameterValue
+    oci.data_safe.models.CryptoTdePosture
+    oci.data_safe.models.CryptoTlsPosture
     oci.data_safe.models.DataSafeConfiguration
     oci.data_safe.models.DataSafePrivateEndpoint
     oci.data_safe.models.DataSafePrivateEndpointSummary
@@ -196,6 +228,7 @@ Data Safe
     oci.data_safe.models.DiscoveryJobResultCollection
     oci.data_safe.models.DiscoveryJobResultSummary
     oci.data_safe.models.DiscoveryJobSummary
+    oci.data_safe.models.DownloadCryptoAssessmentReportDetails
     oci.data_safe.models.DownloadDiscoveryReportDetails
     oci.data_safe.models.DownloadMaskingLogDetails
     oci.data_safe.models.DownloadMaskingPolicyDetails
@@ -224,6 +257,7 @@ Data Safe
     oci.data_safe.models.FormatSummary
     oci.data_safe.models.FormatsForDataType
     oci.data_safe.models.FormatsForSensitiveType
+    oci.data_safe.models.GenerateCryptoAssessmentReportDetails
     oci.data_safe.models.GenerateDiscoveryReportForDownloadDetails
     oci.data_safe.models.GenerateHealthReportDetails
     oci.data_safe.models.GenerateMaskingPolicyForDownloadDetails
@@ -335,6 +369,7 @@ Data Safe
     oci.data_safe.models.RoleGrantPathCollection
     oci.data_safe.models.RoleGrantPathSummary
     oci.data_safe.models.RoleSummary
+    oci.data_safe.models.RunCryptoAssessmentDetails
     oci.data_safe.models.RunSecurityAssessmentDetails
     oci.data_safe.models.RunUserAssessmentDetails
     oci.data_safe.models.SQLExpressionFormatEntry
@@ -479,6 +514,7 @@ Data Safe
     oci.data_safe.models.UpdateColumnSourceDetails
     oci.data_safe.models.UpdateColumnSourceSdmDetails
     oci.data_safe.models.UpdateColumnSourceTargetDetails
+    oci.data_safe.models.UpdateCryptoAssessmentDetails
     oci.data_safe.models.UpdateDataSafePrivateEndpointDetails
     oci.data_safe.models.UpdateDatabaseSecurityConfigDetails
     oci.data_safe.models.UpdateFindingDetails
