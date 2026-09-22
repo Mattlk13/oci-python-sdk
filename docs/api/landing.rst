@@ -8,6 +8,8 @@ API Reference
 * :doc:`Account <marketplace/client/oci.marketplace.AccountClient>`
 * :doc:`Address Rule Service <osp_gateway/client/oci.osp_gateway.AddressRuleServiceClient>`
 * :doc:`Address Service <osp_gateway/client/oci.osp_gateway.AddressServiceClient>`
+* :doc:`Administrator Artifact <marketplace_publisher/client/oci.marketplace_publisher.AdministratorArtifactClient>`
+* :doc:`Administrator Publisher <marketplace_publisher/client/oci.marketplace_publisher.AdministratorPublisherClient>`
 * :doc:`Ai Data Platform <ai_data_platform/client/oci.ai_data_platform.AiDataPlatformClient>`
 * :doc:`Ai Service Document <ai_document/client/oci.ai_document.AIServiceDocumentClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
@@ -99,14 +101,10 @@ API Reference
 * :doc:`Diagnosis <cluster_health/client/oci.cluster_health.DiagnosisClient>`
 * :doc:`Disaster Recovery <disaster_recovery/client/oci.disaster_recovery.DisasterRecoveryClient>`
 * :doc:`Discovery <cloud_bridge/client/oci.cloud_bridge.DiscoveryClient>`
-* :doc:`Distributed Autonomous Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedAutonomousDbServiceClient>`
-* :doc:`Distributed Autonomous Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedAutonomousDbServiceClient>`
-* :doc:`Distributed Db Private Endpoint Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbPrivateEndpointServiceClient>`
-* :doc:`Distributed Db Private Endpoint Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbPrivateEndpointServiceClient>`
-* :doc:`Distributed Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbServiceClient>`
-* :doc:`Distributed Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbServiceClient>`
-* :doc:`Distributed Db Work Request Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbWorkRequestServiceClient>`
-* :doc:`Distributed Db Work Request Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbWorkRequestServiceClient>`
+* :doc:`Distributed Autonomous Db Service <distributed_database/client/oci.distributed_database.DistributedAutonomousDbServiceClient>`
+* :doc:`Distributed Db Private Endpoint Service <distributed_database/client/oci.distributed_database.DistributedDbPrivateEndpointServiceClient>`
+* :doc:`Distributed Db Service <distributed_database/client/oci.distributed_database.DistributedDbServiceClient>`
+* :doc:`Distributed Db Work Request Service <distributed_database/client/oci.distributed_database.DistributedDbWorkRequestServiceClient>`
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
 * :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
 * :doc:`Dynamic Set <os_management_hub/client/oci.os_management_hub.DynamicSetClient>`
@@ -184,6 +182,7 @@ API Reference
 * :doc:`Management Appliance <ocvp/client/oci.ocvp.ManagementApplianceClient>`
 * :doc:`Management Station <os_management_hub/client/oci.os_management_hub.ManagementStationClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
+* :doc:`Marketplace Administrator <marketplace_publisher/client/oci.marketplace_publisher.MarketplaceAdministratorClient>`
 * :doc:`Marketplace Publisher <marketplace_publisher/client/oci.marketplace_publisher.MarketplacePublisherClient>`
 * :doc:`Media Services <media_services/client/oci.media_services.MediaServicesClient>`
 * :doc:`Media Stream <media_services/client/oci.media_services.MediaStreamClient>`
@@ -322,6 +321,7 @@ API Reference
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
+* :doc:`Work Request Management <functions/client/oci.functions.WorkRequestManagementClient>`
 * :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
 * :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
 * :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
@@ -410,7 +410,6 @@ API Reference
     dif
     disaster_recovery
     distributed_database
-    distributed_database_v26
     dns
     em_warehouse
     email

@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.187.0 - 2026-09-22
+====================
+
+Added 
+----- 
+* Support for recurring maintenance windows in the Application Performance Monitoring Synthetics service 
+* Support for crypto posture assessments in the Data Safe service 
+* Support for customer-managed compute capacity reservations for model deployments, notebook sessions, jobs, and pipelines in the Data Science service 
+* Support for code-only functions with managed runtimes and automated image builds in the Functions service 
+* Support for routing profiles and model discovery in the Generative AI service 
+* Support for generating, filtering, and downloading Customer Instance Report exports in the Marketplace Publisher service  
+
+Breaking 
+-------- 
+* Package `oci.distributed_database_v26` was renamed to `oci.distributed_database` in the Globally Distributed Database service 
+* The fields `image` and `image_digest` were removed from the models `CreateFunctionDetails`, `UpdateFunctionDetails`, `Function`, and `FunctionSummary` in the Functions service 
+* The type of property `source_details` in model `CreateFunctionDetails` changed from `FunctionSourceDetails` to `CreateFunctionSourceDetails` in the Functions service 
+* Parameter `activate_target_database_details` changed from a required positional parameter to an optional keyword argument in method `activate_target_database` in `DataSafeClient` and method `activate_target_database_and_wait_for_state` in `DataSafeClientCompositeOperations` in the Data Safe service 
+* The fields `tenant_admin_name` and `tenant_admin_email` were removed from the model `CustomerInstanceReportRecord` in the Marketplace Publisher service 
+* Parameter `date_range` was removed from operation `list_customer_instance_report_records` in `MarketplacePublisherClient` in the Marketplace Publisher service 
+* Allowed values `timeCreated` and `displayName` were removed from the property `sort_by` in operation `list_customer_instance_report_records` in the Marketplace Publisher service 
+* Constants `OPN_STATUS_ACTIVE`, `OPN_STATUS_INACTIVE`, and `OPN_STATUS_RENEWAL_IN_PROGRESS` were removed from model `OpnMembership` in the Marketplace Publisher service 
+* The `BILLING_FREQUENCY_YEARLY` constant and `YEARLY` value were removed from the model `SaaSPricingPlan` in the Marketplace Publisher service.  
+
+====================
 2.186.0 - 2026-09-15
 ====================
 

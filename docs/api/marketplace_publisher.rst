@@ -6,7 +6,13 @@ Marketplace Publisher
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.marketplace_publisher.AdministratorArtifactClient
+    oci.marketplace_publisher.AdministratorPublisherClient
+    oci.marketplace_publisher.MarketplaceAdministratorClient
     oci.marketplace_publisher.MarketplacePublisherClient
+    oci.marketplace_publisher.AdministratorArtifactClientCompositeOperations
+    oci.marketplace_publisher.AdministratorPublisherClientCompositeOperations
+    oci.marketplace_publisher.MarketplaceAdministratorClientCompositeOperations
     oci.marketplace_publisher.MarketplacePublisherClientCompositeOperations
 
 --------
@@ -20,11 +26,61 @@ Marketplace Publisher
 
     oci.marketplace_publisher.models.AdditionalFilter
     oci.marketplace_publisher.models.AdditionalInfo
+    oci.marketplace_publisher.models.AdminAiAgentListingRevision
+    oci.marketplace_publisher.models.AdminArtifact
+    oci.marketplace_publisher.models.AdminArtifactCollection
+    oci.marketplace_publisher.models.AdminArtifactSummary
+    oci.marketplace_publisher.models.AdminBillToCountries
+    oci.marketplace_publisher.models.AdminContainerImageArtifact
+    oci.marketplace_publisher.models.AdminContainerPackage
+    oci.marketplace_publisher.models.AdminCustomerSuccessAttachment
+    oci.marketplace_publisher.models.AdminHelmChartPackage
+    oci.marketplace_publisher.models.AdminKubernetesImageArtifact
+    oci.marketplace_publisher.models.AdminLeadGenListingRevision
+    oci.marketplace_publisher.models.AdminListing
+    oci.marketplace_publisher.models.AdminListingProduct
+    oci.marketplace_publisher.models.AdminListingRevision
+    oci.marketplace_publisher.models.AdminListingRevisionAttachment
+    oci.marketplace_publisher.models.AdminListingRevisionAttachmentCollection
+    oci.marketplace_publisher.models.AdminListingRevisionAttachmentSummary
+    oci.marketplace_publisher.models.AdminListingRevisionCollection
+    oci.marketplace_publisher.models.AdminListingRevisionPackage
+    oci.marketplace_publisher.models.AdminListingRevisionPackageCollection
+    oci.marketplace_publisher.models.AdminListingRevisionPackageSummary
+    oci.marketplace_publisher.models.AdminListingRevisionSummary
+    oci.marketplace_publisher.models.AdminMachineImageArtifact
+    oci.marketplace_publisher.models.AdminMachineImagePackage
+    oci.marketplace_publisher.models.AdminMarket
+    oci.marketplace_publisher.models.AdminOciListingRevision
+    oci.marketplace_publisher.models.AdminOpnPartnerSummary
+    oci.marketplace_publisher.models.AdminPublisher
+    oci.marketplace_publisher.models.AdminPublisherSku
+    oci.marketplace_publisher.models.AdminPublisherSkuCollection
+    oci.marketplace_publisher.models.AdminPublisherSummary
+    oci.marketplace_publisher.models.AdminRelatedDocumentAttachment
+    oci.marketplace_publisher.models.AdminReviewSupportDocumentAttachment
+    oci.marketplace_publisher.models.AdminScreenShotAttachment
+    oci.marketplace_publisher.models.AdminServiceListingRevision
+    oci.marketplace_publisher.models.AdminSkuPricingRate
+    oci.marketplace_publisher.models.AdminStackArtifact
+    oci.marketplace_publisher.models.AdminStackPackage
+    oci.marketplace_publisher.models.AdminSupportedServiceAttachment
+    oci.marketplace_publisher.models.AdminTerm
+    oci.marketplace_publisher.models.AdminTermCollection
+    oci.marketplace_publisher.models.AdminTermSummary
+    oci.marketplace_publisher.models.AdminTermVersion
+    oci.marketplace_publisher.models.AdminTermVersionAttachment
+    oci.marketplace_publisher.models.AdminTermVersionCollection
+    oci.marketplace_publisher.models.AdminTermVersionSummary
+    oci.marketplace_publisher.models.AdminVideoAttachment
+    oci.marketplace_publisher.models.AdminWorkRequestSummary
+    oci.marketplace_publisher.models.AdminWorkRequestSummaryCollection
     oci.marketplace_publisher.models.Artifact
     oci.marketplace_publisher.models.ArtifactCollection
     oci.marketplace_publisher.models.ArtifactSummary
     oci.marketplace_publisher.models.AvailableServiceCollection
     oci.marketplace_publisher.models.AvailableServiceSummary
+    oci.marketplace_publisher.models.BillToCountry
     oci.marketplace_publisher.models.Category
     oci.marketplace_publisher.models.CategoryCollection
     oci.marketplace_publisher.models.CategorySummary
@@ -34,6 +90,7 @@ Marketplace Publisher
     oci.marketplace_publisher.models.ContainerImageArtifact
     oci.marketplace_publisher.models.ContainerImageDetails
     oci.marketplace_publisher.models.ContainerPackage
+    oci.marketplace_publisher.models.CreateAdminListingRevisionNoteDetails
     oci.marketplace_publisher.models.CreateArtifactDetails
     oci.marketplace_publisher.models.CreateContainerImageArtifactDetails
     oci.marketplace_publisher.models.CreateContainerImageDetails
@@ -48,7 +105,9 @@ Marketplace Publisher
     oci.marketplace_publisher.models.CreateListingRevisionPackageDetails
     oci.marketplace_publisher.models.CreateMachineImageArtifactDetails
     oci.marketplace_publisher.models.CreateMachineImageDetails
+    oci.marketplace_publisher.models.CreateMarketDetails
     oci.marketplace_publisher.models.CreateOciListingRevisionDetails
+    oci.marketplace_publisher.models.CreatePublisherDetails
     oci.marketplace_publisher.models.CreateRelatedDocumentAttachmentDetails
     oci.marketplace_publisher.models.CreateReviewSupportDocumentAttachment
     oci.marketplace_publisher.models.CreateScreenShotAttachmentDetails
@@ -59,6 +118,9 @@ Marketplace Publisher
     oci.marketplace_publisher.models.CreateTermDetails
     oci.marketplace_publisher.models.CreateVideoAttachmentDetails
     oci.marketplace_publisher.models.CreateVideoDetails
+    oci.marketplace_publisher.models.CustomerInstanceReportExport
+    oci.marketplace_publisher.models.CustomerInstanceReportExportCollection
+    oci.marketplace_publisher.models.CustomerInstanceReportExportSummary
     oci.marketplace_publisher.models.CustomerInstanceReportRecord
     oci.marketplace_publisher.models.CustomerInstanceReportRecordCollection
     oci.marketplace_publisher.models.CustomerSuccessAttachment
@@ -66,9 +128,11 @@ Marketplace Publisher
     oci.marketplace_publisher.models.DisbursementReportRecordCollection
     oci.marketplace_publisher.models.DownloadInfo
     oci.marketplace_publisher.models.FilterProperty
+    oci.marketplace_publisher.models.GenerateCustomerInstanceReportExportDetails
     oci.marketplace_publisher.models.GeoLocation
     oci.marketplace_publisher.models.HelmChartImageDetails
     oci.marketplace_publisher.models.HelmChartPackage
+    oci.marketplace_publisher.models.HybridPricingPlan
     oci.marketplace_publisher.models.ImageMemoryConstraints
     oci.marketplace_publisher.models.ImageOcpuConstraints
     oci.marketplace_publisher.models.ImageShapeCompatibility
@@ -88,6 +152,7 @@ Marketplace Publisher
     oci.marketplace_publisher.models.ListingRevisionAttachment
     oci.marketplace_publisher.models.ListingRevisionAttachmentCollection
     oci.marketplace_publisher.models.ListingRevisionAttachmentSummary
+    oci.marketplace_publisher.models.ListingRevisionBannerAttachment
     oci.marketplace_publisher.models.ListingRevisionCollection
     oci.marketplace_publisher.models.ListingRevisionIconAttachment
     oci.marketplace_publisher.models.ListingRevisionNote
@@ -109,6 +174,7 @@ Marketplace Publisher
     oci.marketplace_publisher.models.NamedLink
     oci.marketplace_publisher.models.OciListingRevision
     oci.marketplace_publisher.models.OpnMembership
+    oci.marketplace_publisher.models.PartnerPortalOptions
     oci.marketplace_publisher.models.PricingPlan
     oci.marketplace_publisher.models.PricingRate
     oci.marketplace_publisher.models.PrivateOfferAccountDetails
@@ -147,6 +213,7 @@ Marketplace Publisher
     oci.marketplace_publisher.models.TermVersionCollection
     oci.marketplace_publisher.models.TermVersionSummary
     oci.marketplace_publisher.models.TrainedProfessionals
+    oci.marketplace_publisher.models.UpdateAdminArtifactStatusDetails
     oci.marketplace_publisher.models.UpdateArtifactDetails
     oci.marketplace_publisher.models.UpdateContainerImageArtifactDetails
     oci.marketplace_publisher.models.UpdateContainerImageDetails
@@ -173,6 +240,8 @@ Marketplace Publisher
     oci.marketplace_publisher.models.UpdateTermVersionDetails
     oci.marketplace_publisher.models.UpdateVideoAttachmentDetails
     oci.marketplace_publisher.models.UploadData
+    oci.marketplace_publisher.models.UsageBasedPricingPlan
+    oci.marketplace_publisher.models.UsageDimension
     oci.marketplace_publisher.models.VersionDetails
     oci.marketplace_publisher.models.VideoAttachment
     oci.marketplace_publisher.models.WorkRequest

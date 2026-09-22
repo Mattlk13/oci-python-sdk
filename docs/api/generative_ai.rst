@@ -24,6 +24,7 @@ Generative Ai
     oci.generative_ai.models.ApiKeyItem
     oci.generative_ai.models.ApiKeySummary
     oci.generative_ai.models.Artifact
+    oci.generative_ai.models.Availability
     oci.generative_ai.models.ChangeApiKeyCompartmentDetails
     oci.generative_ai.models.ChangeDedicatedAiClusterCompartmentDetails
     oci.generative_ai.models.ChangeEndpointCompartmentDetails
@@ -33,6 +34,7 @@ Generative Ai
     oci.generative_ai.models.ChangeHostedApplicationStorageCompartmentDetails
     oci.generative_ai.models.ChangeImportedModelCompartmentDetails
     oci.generative_ai.models.ChangeModelCompartmentDetails
+    oci.generative_ai.models.ChangeRoutingProfileCompartmentDetails
     oci.generative_ai.models.ChangeSemanticStoreCompartmentDetails
     oci.generative_ai.models.ChatModelMetrics
     oci.generative_ai.models.CondenserConfig
@@ -54,6 +56,7 @@ Generative Ai
     oci.generative_ai.models.CreateHostedDeploymentDetails
     oci.generative_ai.models.CreateImportedModelDetails
     oci.generative_ai.models.CreateModelDetails
+    oci.generative_ai.models.CreateRoutingProfileDetails
     oci.generative_ai.models.CreateSchemasDatabaseToolsConnectionDetails
     oci.generative_ai.models.CreateSchemasDetails
     oci.generative_ai.models.CreateSemanticStoreDetails
@@ -114,7 +117,11 @@ Generative Ai
     oci.generative_ai.models.ModelCollection
     oci.generative_ai.models.ModelConfig
     oci.generative_ai.models.ModelDataSource
+    oci.generative_ai.models.ModelDiscovery
+    oci.generative_ai.models.ModelDiscoveryCollection
     oci.generative_ai.models.ModelMetrics
+    oci.generative_ai.models.ModelModalitySupport
+    oci.generative_ai.models.ModelRoutingPolicy
     oci.generative_ai.models.ModelSummary
     oci.generative_ai.models.NetworkingConfig
     oci.generative_ai.models.ObjectStorageConfig
@@ -122,13 +129,19 @@ Generative Ai
     oci.generative_ai.models.ObjectStorageObject
     oci.generative_ai.models.OciObjectStorageConfiguration
     oci.generative_ai.models.OutboundNetworkingConfig
+    oci.generative_ai.models.Parameter
     oci.generative_ai.models.PiiDetectionConfig
+    oci.generative_ai.models.PreviousRoutingProfileState
     oci.generative_ai.models.PromptInjectionConfig
     oci.generative_ai.models.RefreshScheduleDetails
     oci.generative_ai.models.RefreshScheduleIntervalDetails
     oci.generative_ai.models.RefreshScheduleNoneDetails
     oci.generative_ai.models.RefreshScheduleOnCreateDetails
+    oci.generative_ai.models.RegionRoutingPolicy
     oci.generative_ai.models.RenewApiKeyDetails
+    oci.generative_ai.models.RoutingProfile
+    oci.generative_ai.models.RoutingProfileCollection
+    oci.generative_ai.models.RoutingProfileSummary
     oci.generative_ai.models.ScalingConfig
     oci.generative_ai.models.ScheduleConfig
     oci.generative_ai.models.ScheduleCronConfig
@@ -159,6 +172,7 @@ Generative Ai
     oci.generative_ai.models.UpdateHostedDeploymentDetails
     oci.generative_ai.models.UpdateImportedModelDetails
     oci.generative_ai.models.UpdateModelDetails
+    oci.generative_ai.models.UpdateRoutingProfileDetails
     oci.generative_ai.models.UpdateSemanticStoreDetails
     oci.generative_ai.models.UpdateVectorStoreConnectorDetails
     oci.generative_ai.models.VanillaTrainingConfig

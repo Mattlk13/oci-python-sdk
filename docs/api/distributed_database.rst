@@ -26,70 +26,123 @@ Distributed Database
 
     oci.distributed_database.models.AddDistributedAutonomousDatabaseGdsControlNodeDetails
     oci.distributed_database.models.AddDistributedDatabaseGdsControlNodeDetails
-    oci.distributed_database.models.CatalogPeerWithDedicatedInfra
-    oci.distributed_database.models.CatalogPeerWithExadbXs
-    oci.distributed_database.models.CatalogPeerWithExadbXsNewVaultAndCluster
+    oci.distributed_database.models.AutoResourceManagementConfigurationDetails
+    oci.distributed_database.models.AutonomousCompositeDataGuardShardSpace
+    oci.distributed_database.models.AutonomousCompositeDataGuardShardSpaceReplica
+    oci.distributed_database.models.AutonomousCompositeRaftShardSpace
+    oci.distributed_database.models.AutonomousCompositeShardSpaceRaftCluster
+    oci.distributed_database.models.AutonomousSystemDataGuardDatabase
+    oci.distributed_database.models.AutonomousSystemDataGuardReplica
+    oci.distributed_database.models.AutonomousSystemRaftCluster
+    oci.distributed_database.models.AutonomousUserShardSpace
+    oci.distributed_database.models.AutonomousUserShardSpaceReplica
     oci.distributed_database.models.ChangeDistributedAutonomousDatabaseCompartmentDetails
     oci.distributed_database.models.ChangeDistributedAutonomousDbBackupConfigDetails
     oci.distributed_database.models.ChangeDistributedDatabaseCompartmentDetails
     oci.distributed_database.models.ChangeDistributedDatabasePrivateEndpointCompartmentDetails
     oci.distributed_database.models.ChangeDistributedDbBackupConfigDetails
+    oci.distributed_database.models.CompositeDataGuardShardSpace
+    oci.distributed_database.models.CompositeDataGuardShardSpaceReplica
+    oci.distributed_database.models.CompositeRaftShardSpace
+    oci.distributed_database.models.CompositeShardSpaceRaftCluster
+    oci.distributed_database.models.ConfigureDistributedAutonomousDatabaseAutoResourceManagementDetails
     oci.distributed_database.models.ConfigureDistributedAutonomousDatabaseGsmWalletDetails
     oci.distributed_database.models.ConfigureDistributedAutonomousDatabaseGsmsDetails
+    oci.distributed_database.models.ConfigureDistributedDatabaseAutoResourceManagementDetails
     oci.distributed_database.models.ConfigureDistributedDatabaseGsmsDetails
-    oci.distributed_database.models.CreateCatalogPeerWithDedicatedInfraDetails
-    oci.distributed_database.models.CreateCatalogPeerWithExadbXsDetails
-    oci.distributed_database.models.CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails
-    oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogDetails
+    oci.distributed_database.models.CreateAutonomousCatalogDatabaseDetails
+    oci.distributed_database.models.CreateAutonomousCatalogDetails
+    oci.distributed_database.models.CreateAutonomousCatalogReplicaDetails
+    oci.distributed_database.models.CreateAutonomousCompositeDataGuardShardSpaceDetails
+    oci.distributed_database.models.CreateAutonomousCompositeDataGuardShardSpaceReplicaDetails
+    oci.distributed_database.models.CreateAutonomousCompositeRaftShardSpaceDetails
+    oci.distributed_database.models.CreateAutonomousCompositeShardSpaceRaftClusterDetails
+    oci.distributed_database.models.CreateAutonomousSystemDataGuardDatabaseDetails
+    oci.distributed_database.models.CreateAutonomousSystemDataGuardReplicaDetails
+    oci.distributed_database.models.CreateAutonomousSystemRaftClusterDetails
+    oci.distributed_database.models.CreateAutonomousUserShardSpaceDetails
+    oci.distributed_database.models.CreateAutonomousUserShardSpaceReplicaDetails
+    oci.distributed_database.models.CreateCompositeDataGuardShardSpaceDetails
+    oci.distributed_database.models.CreateCompositeDataGuardShardSpaceReplicaDetails
+    oci.distributed_database.models.CreateCompositeRaftShardSpaceDetails
+    oci.distributed_database.models.CreateCompositeShardSpaceRaftClusterDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseDetails
-    oci.distributed_database.models.CreateDistributedAutonomousDatabaseShardDetails
+    oci.distributed_database.models.CreateDistributedAutonomousDatabaseShardDatabaseDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails
+    oci.distributed_database.models.CreateDistributedDatabaseCatalogDatabaseDetails
+    oci.distributed_database.models.CreateDistributedDatabaseCatalogDatabaseWithDbHomeDetails
+    oci.distributed_database.models.CreateDistributedDatabaseCatalogDatabaseWithExadbXdDetails
+    oci.distributed_database.models.CreateDistributedDatabaseCatalogDatabaseWithExadbXsDetails
     oci.distributed_database.models.CreateDistributedDatabaseCatalogDetails
-    oci.distributed_database.models.CreateDistributedDatabaseCatalogWithExadbXsDetails
+    oci.distributed_database.models.CreateDistributedDatabaseCatalogReplicaDetails
+    oci.distributed_database.models.CreateDistributedDatabaseCatalogWithExadbXsNewClusterDetails
     oci.distributed_database.models.CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails
     oci.distributed_database.models.CreateDistributedDatabaseDetails
     oci.distributed_database.models.CreateDistributedDatabasePrivateEndpointDetails
-    oci.distributed_database.models.CreateDistributedDatabaseShardDetails
-    oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsDetails
+    oci.distributed_database.models.CreateDistributedDatabaseShardDatabaseDetails
+    oci.distributed_database.models.CreateDistributedDatabaseShardDatabaseWithDbHomeDetails
+    oci.distributed_database.models.CreateDistributedDatabaseShardDatabaseWithExadbXdDetails
+    oci.distributed_database.models.CreateDistributedDatabaseShardDatabaseWithExadbXsDetails
+    oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsNewClusterDetails
     oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDetails
-    oci.distributed_database.models.CreateShardPeerWithDedicatedInfraDetails
-    oci.distributed_database.models.CreateShardPeerWithExadbXsDetails
-    oci.distributed_database.models.CreateShardPeerWithExadbXsNewVaultAndClusterDetails
+    oci.distributed_database.models.CreateSystemDataGuardDatabaseDetails
+    oci.distributed_database.models.CreateSystemDataGuardReplicaDetails
+    oci.distributed_database.models.CreateSystemRaftClusterDetails
+    oci.distributed_database.models.CreateUserShardSpaceDetails
+    oci.distributed_database.models.CreateUserShardSpaceReplicaDetails
     oci.distributed_database.models.DbStorageVaultDetails
     oci.distributed_database.models.DistributedAutonomousDatabase
-    oci.distributed_database.models.DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint
+    oci.distributed_database.models.DistributedAutonomousDatabaseAutoResourceManagementDetails
     oci.distributed_database.models.DistributedAutonomousDatabaseCatalog
+    oci.distributed_database.models.DistributedAutonomousDatabaseCatalogDatabase
+    oci.distributed_database.models.DistributedAutonomousDatabaseCatalogReplica
     oci.distributed_database.models.DistributedAutonomousDatabaseCatalogWithDedicatedInfra
     oci.distributed_database.models.DistributedAutonomousDatabaseCollection
     oci.distributed_database.models.DistributedAutonomousDatabaseConnectionString
+    oci.distributed_database.models.DistributedAutonomousDatabaseGdsControlNode
+    oci.distributed_database.models.DistributedAutonomousDatabaseGdsControlNodeImage
     oci.distributed_database.models.DistributedAutonomousDatabaseGsm
     oci.distributed_database.models.DistributedAutonomousDatabaseGsmImage
     oci.distributed_database.models.DistributedAutonomousDatabaseRaftMetric
-    oci.distributed_database.models.DistributedAutonomousDatabaseShard
+    oci.distributed_database.models.DistributedAutonomousDatabaseRuChangeLog
+    oci.distributed_database.models.DistributedAutonomousDatabaseRuChangeLogSummary
+    oci.distributed_database.models.DistributedAutonomousDatabaseShardDatabase
     oci.distributed_database.models.DistributedAutonomousDatabaseShardWithDedicatedInfra
     oci.distributed_database.models.DistributedAutonomousDatabaseSummary
     oci.distributed_database.models.DistributedAutonomousDbBackupConfig
     oci.distributed_database.models.DistributedAutonomousDbBackupDestination
     oci.distributed_database.models.DistributedAutonomousDbMetadata
     oci.distributed_database.models.DistributedDatabase
-    oci.distributed_database.models.DistributedDatabaseAssociatedWithPrivateEndpoint
+    oci.distributed_database.models.DistributedDatabaseAutoResourceManagementDetails
     oci.distributed_database.models.DistributedDatabaseCatalog
-    oci.distributed_database.models.DistributedDatabaseCatalogWithExadbXs
-    oci.distributed_database.models.DistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
+    oci.distributed_database.models.DistributedDatabaseCatalogDatabase
+    oci.distributed_database.models.DistributedDatabaseCatalogDatabaseWithDbHome
+    oci.distributed_database.models.DistributedDatabaseCatalogDatabaseWithExadbXd
+    oci.distributed_database.models.DistributedDatabaseCatalogDatabaseWithExadbXs
+    oci.distributed_database.models.DistributedDatabaseCatalogDatabaseWithExadbXsNewCluster
+    oci.distributed_database.models.DistributedDatabaseCatalogDatabaseWithExadbXsNewVaultAndCluster
+    oci.distributed_database.models.DistributedDatabaseCatalogReplicaDetails
     oci.distributed_database.models.DistributedDatabaseCollection
+    oci.distributed_database.models.DistributedDatabaseGdsControlNode
     oci.distributed_database.models.DistributedDatabaseGsm
     oci.distributed_database.models.DistributedDatabasePrivateEndpoint
     oci.distributed_database.models.DistributedDatabasePrivateEndpointCollection
     oci.distributed_database.models.DistributedDatabasePrivateEndpointSummary
     oci.distributed_database.models.DistributedDatabaseRaftMetric
-    oci.distributed_database.models.DistributedDatabaseShard
-    oci.distributed_database.models.DistributedDatabaseShardWithExadbXs
-    oci.distributed_database.models.DistributedDatabaseShardWithExadbXsNewVaultAndCluster
+    oci.distributed_database.models.DistributedDatabaseRuChangeLog
+    oci.distributed_database.models.DistributedDatabaseRuChangeLogSummary
+    oci.distributed_database.models.DistributedDatabaseShardDatabase
+    oci.distributed_database.models.DistributedDatabaseShardDatabaseWithDbHome
+    oci.distributed_database.models.DistributedDatabaseShardDatabaseWithExadbXd
+    oci.distributed_database.models.DistributedDatabaseShardDatabaseWithExadbXs
+    oci.distributed_database.models.DistributedDatabaseShardDatabaseWithExadbXsNewCluster
+    oci.distributed_database.models.DistributedDatabaseShardDatabaseWithExadbXsNewVaultAndCluster
     oci.distributed_database.models.DistributedDatabaseSummary
     oci.distributed_database.models.DistributedDbBackupConfig
     oci.distributed_database.models.DistributedDbBackupDestination
     oci.distributed_database.models.DistributedDbConnectionString
+    oci.distributed_database.models.DistributedDbGdsControlNodeImage
     oci.distributed_database.models.DistributedDbGsmImage
     oci.distributed_database.models.DistributedDbMetadata
     oci.distributed_database.models.DistributedDbStorageVault
@@ -100,18 +153,26 @@ Distributed Database
     oci.distributed_database.models.MoveDistributedDatabaseReplicationUnitDetails
     oci.distributed_database.models.PatchDistributedAutonomousDatabaseDetails
     oci.distributed_database.models.PatchDistributedDatabaseDetails
+    oci.distributed_database.models.PatchDistributedDatabasePrivateEndpointDetails
     oci.distributed_database.models.PatchInsertInstruction
     oci.distributed_database.models.PatchInstruction
     oci.distributed_database.models.PatchMergeInstruction
     oci.distributed_database.models.PatchRemoveInstruction
-    oci.distributed_database.models.ShardPeerWithDedicatedInfra
-    oci.distributed_database.models.ShardPeerWithExadbXs
-    oci.distributed_database.models.ShardPeerWithExadbXsNewVaultAndCluster
+    oci.distributed_database.models.RotateDistributedAutonomousDatabaseDetails
+    oci.distributed_database.models.RotateDistributedAutonomousDatabasePasswordsDetails
+    oci.distributed_database.models.RotateDistributedDatabaseDetails
+    oci.distributed_database.models.RotateDistributedDatabasePasswordsDetails
+    oci.distributed_database.models.ScaleDistributedAutonomousDatabaseGsmsDetails
+    oci.distributed_database.models.ScaleDistributedDatabaseGsmsDetails
+    oci.distributed_database.models.SystemDataGuardDatabase
+    oci.distributed_database.models.SystemDataGuardReplica
+    oci.distributed_database.models.SystemRaftCluster
     oci.distributed_database.models.UpdateDistributedAutonomousDatabaseDetails
     oci.distributed_database.models.UpdateDistributedDatabaseDetails
     oci.distributed_database.models.UpdateDistributedDatabasePrivateEndpointDetails
-    oci.distributed_database.models.UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletDetails
-    oci.distributed_database.models.UploadDistributedDatabaseSignedCertificateAndGenerateWalletDetails
+    oci.distributed_database.models.UserShardSpace
+    oci.distributed_database.models.UserShardSpaceReplica
+    oci.distributed_database.models.VcnNsgIdsDetails
     oci.distributed_database.models.VmClusterDetails
     oci.distributed_database.models.WorkRequest
     oci.distributed_database.models.WorkRequestError
